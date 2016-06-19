@@ -1,0 +1,215 @@
+2016-05-15 09:32:33 Error: [Cake\Core\Exception\MissingPluginException] Plugin Modern could not be found.
+Exception Attributes: array (
+  'plugin' => 'Modern',
+)
+Request URL: /personnages/feuille
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Core\App.php(189): Cake\Core\Plugin::classPath('Modern')
+#1 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\View\View.php(1249): Cake\Core\App::path('Template', 'Modern')
+#2 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\View\View.php(1067): Cake\View\View->_paths(NULL)
+#3 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\View\View.php(584): Cake\View\View->_getViewFileName(NULL)
+#4 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Controller\Controller.php(611): Cake\View\View->render(NULL, NULL)
+#5 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#6 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PersonnagesController))
+#7 C:\wamp\www\appjdr\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2016-05-15 12:10:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Comptences could not be found.
+Exception Attributes: array (
+  'class' => 'Comptences',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /comptences
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-15 12:30:16 Error: [PDOException] SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+
+Request URL: /users/login
+Referer URL: http://localhost:8765/users/login
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'jdr', 'jdr', Array)
+#1 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(90): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(43): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Connection.php(317): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Table.php(428): Cake\Database\Connection->schemaCollection()
+#8 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Query.php(211): Cake\ORM\Table->schema()
+#9 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Query.php(169): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Table.php(1242): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Table.php(945): Cake\ORM\Table->query()
+#12 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Auth\BaseAuthenticate.php(156): Cake\ORM\Table->find('all', Array)
+#13 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Auth\BaseAuthenticate.php(108): Cake\Auth\BaseAuthenticate->_query('mj')
+#14 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Auth\FormAuthenticate.php(77): Cake\Auth\BaseAuthenticate->_findUser('mj', 'mj')
+#15 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(769): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 C:\wamp\www\appjdr\src\Controller\UsersController.php(16): Cake\Controller\Component\AuthComponent->identify()
+#17 [internal function]: App\Controller\UsersController->login()
+#18 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#19 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#20 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#21 C:\wamp\www\appjdr\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#22 {main}
+
+
+2016-05-15 12:42:28 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'connaissances.bonnus' in 'field list'
+Request URL: /personnages/feuille/1
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Connection.php(272): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Query.php(188): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 C:\wamp\www\appjdr\src\Controller\PersonnagesController.php(80): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\PersonnagesController->feuille('1')
+#11 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#12 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PersonnagesController))
+#14 C:\wamp\www\appjdr\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
+
+
+2016-05-15 12:42:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bonnus' in 'order clause'
+Request URL: /personnages/feuille/1
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Connection.php(272): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Database\Query.php(188): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 C:\wamp\www\appjdr\src\Controller\PersonnagesController.php(79): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\PersonnagesController->feuille('1')
+#11 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#12 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PersonnagesController))
+#14 C:\wamp\www\appjdr\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
+
+
+2016-05-15 13:25:20 Error: Fatal Error (4): syntax error, unexpected '"Points d'action"' (T_CONSTANT_ENCAPSED_STRING) in [C:\wamp\www\appjdr\src\Template\Personnages\feuille.ctp, line 55]
+Request URL: /personnages/feuille/1
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 215
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2016-05-15 13:25:20 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '"Points d'action"' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /personnages/feuille/1
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\app...', 55)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-15 13:25:57 Error: Fatal Error (4): syntax error, unexpected '"Points d'action"' (T_CONSTANT_ENCAPSED_STRING) in [C:\wamp\www\appjdr\src\Template\Personnages\feuille.ctp, line 56]
+Request URL: /personnages/feuille/1
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 215
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2016-05-15 13:25:58 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '"Points d'action"' (T_CONSTANT_ENCAPSED_STRING)
+Request URL: /personnages/feuille/1
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\app...', 56)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-15 14:34:12 Error: Fatal Error (1): Call to undefined method App\View\AppView::h() in [C:\wamp\www\appjdr\src\Template\Personnages\feuille.ctp, line 59]
+Request URL: /personnages/feuille/1
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 215
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2016-05-15 14:34:13 Error: [Cake\Error\FatalErrorException] Call to undefined method App\View\AppView::h()
+Request URL: /personnages/feuille/1
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\app...', 59)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-15 16:10:47 Error: Fatal Error (4): syntax error, unexpected 'pv' (T_STRING), expecting ',' or ';' in [C:\wamp\www\appjdr\src\Template\Personnages\feuille.ctp, line 78]
+Request URL: /personnages/feuille/2
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 215
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2016-05-15 16:10:48 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'pv' (T_STRING), expecting ',' or ';'
+Request URL: /personnages/feuille/2
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\app...', 78)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-15 16:11:12 Error: Fatal Error (4): syntax error, unexpected 'pv' (T_STRING), expecting ',' or ';' in [C:\wamp\www\appjdr\src\Template\Personnages\feuille.ctp, line 78]
+Request URL: /personnages/feuille/2
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 215
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2016-05-15 16:11:13 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'pv' (T_STRING), expecting ',' or ';'
+Request URL: /personnages/feuille/2
+Referer URL: http://localhost:8765/personnages
+Client IP: 127.0.0.1
+Stack Trace:
+#0 C:\wamp\www\appjdr\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\app...', 78)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
