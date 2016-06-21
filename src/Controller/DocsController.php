@@ -12,4 +12,7 @@ class DocsController extends AppController
     }
     public function lore(){
     }
+    public function index(){
+        return $this->redirect(['action' => 'rules']);
+    }
 }
