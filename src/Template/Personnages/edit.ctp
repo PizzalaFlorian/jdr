@@ -8,28 +8,62 @@
         <?php
             echo $this->Form->input('nom');
             echo $this->Form->input('prenom');
-            echo $this->Form->input('race');
-            echo $this->Form->input('type_campagne');
+            echo $this->Form->label('type_campagne');
+            echo $this->Form->select(
+                'type_campagne',
+                [
+                    'medieval'=>'medieval',
+                    'science-fiction'=>'science-fiction'
+                ],
+                ['default' =>$personnage->type_campagne]
+            );
+            echo $this->Form->label('race');
+            echo $this->Form->select(
+                'race',
+                [
+                    'Humain(Hyborien)'=>'Humain(Hyborien)',
+                    'Humain(Nordique)'=>'Humain(Nordique)',
+                    'Humain(Shémites)'=>'Humain(Shémites)',
+                    'Humain(peuple du désert)'=>'Humain(peuple du désert)',
+                    'Nain'=>'Nain',
+                    'Nain du sud'=>'Nain du sud',
+                    'Haut Elfe'=>'Haut Elfe',
+                    'Elfe des bois'=>'Elfe des bois',
+                    'Elfe noir'=>'Elfe noir',
+                    'Elfe bleu'=>'Elfe bleu',
+                    'Demi-elfe'=>'Demi-elfe',
+                    'Demi-humain'=>'Demi-humain',
+                    'Demi-Orque'=>'Demi-Orque',
+                    'Hobbit'=>'Hobbit',
+                    'Gnome'=>'Gnome'
+                ],
+                ['default' => $personnage->race]
+            );
             echo $this->Form->input('age');
-            echo $this->Form->input('profession');
-            echo $this->Form->input('physique');
-            echo $this->Form->input('adresse');
-            echo $this->Form->input('social');
-            echo $this->Form->input('esprit');
+            echo $this->Form->label('archetype');
+            echo $this->Form->select(
+                'archetype',
+                [
+                    'commun'=>'commun',
+                    'mage'=>'mage',
+                    'creatif'=>'creatif'
+                ],
+                ['default' => $personnage->archetype]
+            );
+
             echo $this->Form->input('pv');
             echo $this->Form->input('pv_max');
+
+            if($personnage->archetype=="mage"){
             echo $this->Form->input('pm');
             echo $this->Form->input('pm_max');
-            echo $this->Form->input('pa');
-            echo $this->Form->input('pi');
-            echo $this->Form->input('ca');
-            echo $this->Form->input('destin');
-            echo $this->Form->input('archetype');
-            echo $this->Form->input('gold');
-            echo $this->Form->input('argent');
-            echo $this->Form->input('bronze');
-            echo $this->Form->input('niveau');
-            echo $this->Form->input('experience');
+            }
+            if($personnage->archetype == "commun")
+                echo $this->Form->input('pa');
+            if($personnage->archetype == "creatif")
+                echo $this->Form->hidden('pi',['value'=>3]);
+            
+
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -187,7 +187,7 @@ class PersonnagesController extends AppController
             $personnage = $this->Personnages->patchEntity($personnage, $this->request->data);
             if ($this->Personnages->save($personnage)) {
                 $this->Flash->success(__('The personnage has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'feuille'.'/'.$id]);
             } else {
                 $this->Flash->error(__('The personnage could not be saved. Please, try again.'));
             }

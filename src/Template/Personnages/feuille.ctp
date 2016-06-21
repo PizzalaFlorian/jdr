@@ -15,6 +15,9 @@
     	</div>
     </div>
     <?= $this->Form->create($personnage) ?>
+    <?php
+    	//debug($personnage);
+    ?>
     <h4>Identitée</h4>
     <table cellpadding="0" cellspacing="0">
         <thead>

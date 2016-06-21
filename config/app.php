@@ -228,7 +228,7 @@ return [
             //'port' => 'non_standard_port_number',
             'username' => 'jdr',
             'password' => 'jdr',
-            'database' => 'bddjdr',
+            'database' => 'bddJdr',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
