@@ -22,8 +22,8 @@
                 'race',
                 [
                     'Humain(Hyborien)'=>'Humain(Hyborien)',
-                    'Humain(Nordique)'=>'Humain(Hyborien)',
-                    'Humain(Shémites)'=>'Humain(Hyborien)',
+                    'Humain(Nordique)'=>'Humain(Nordique)',
+                    'Humain(Shémites)'=>'Humain(Shémites)',
                     'Humain(peuple du désert)'=>'Humain(peuple du désert)',
                     'Nain'=>'Nain',
                     'Nain du sud'=>'Nain du sud',

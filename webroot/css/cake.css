@@ -4,23 +4,23 @@ a.disabled {
 }
 
 a:hover {
-    color: #15848F;
+    color: #997737;
 }
 
 a {
-    color: #1798A5;
+    color: #80622B;
 }
 
 .side-nav li a:not(.button) {
-    color: #15848F;
+    color: #997737;
 }
 
 .side-nav li a:not(.button):hover {
-    color: #15848F;
+    color: #997737;
 }
 
 header {
-    background-color: #15848F;
+    background-color: #997737;
     color: #ffffff;
     font-size: 30px;
     height: 84px;
@@ -34,7 +34,7 @@ header .header-title {
 }
 
 legend {
-    color:#15848F;
+    color:#997737;
 }
 
 .row {
@@ -43,13 +43,13 @@ legend {
 
 .actions.columns {
     margin-top:1rem;
-    border-left: 5px solid #15848F;
+    border-left: 5px solid #997737;
     padding-left: 15px;
     padding: 32px 20px;
 }
 
 .actions.columns h3 {
-    color:#15848F;
+    color:#997737;
 }
 
 .index table {
@@ -319,7 +319,7 @@ pre {
 
 .checks {
     padding:30px;
-    color: #626262;
+    color: #E3E8E4;
     background-color: #B7E3EC;
     border-radius: 3px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.24);
@@ -378,11 +378,11 @@ pre {
 }
 
 .top-bar.expanded .title-area {
-    background: #01545b;
+    background: #D69927;
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #116d76;
+    background: #D69927;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -391,7 +391,7 @@ pre {
 }
 
 .side-nav li.heading {
-    color: #1798A5;
+    color: #80622B;
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -399,7 +399,11 @@ pre {
 }
 
 #actions-sidebar {
-    background: #fafafa;
+    /*background: #fafafa;*/
+    /*background: #F7CD7E;*/
+    background-image:url(../img/bordure.png);
+    background-repeat: repeat-y;
+    background-size: contain;
 }
 
 .index table {
@@ -424,15 +428,15 @@ table tr {
 }
 
 table thead tr {
-    border-bottom: 1px solid #1798A5;
+    border-bottom: 1px solid #80622B;
 }
 
 table tr th {
     padding: 0.5625rem 0.625rem;
     font-size: 0.875rem;
-    color: #1798A5;
+    color: #80622B;
     text-align: left;
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #80622B;
 }
 
 table tr:nth-of-type(even) {
@@ -446,7 +450,7 @@ fieldset {
 }
 
 fieldset legend {
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #80622B;
     width: 100%;
     line-height: 2rem;
 }
@@ -473,8 +477,8 @@ div.message {
     font-weight: normal;
     padding: 0 1.5rem 0 1.5rem;
     transition: height 300ms ease-out 0s;
-    background-color: #a0d3e8;
-    color: #626262;
+    background-color: #659E6E;
+    color: #E3E8E4;
     top: 15px;
     right: 15px;
     z-index: 999;
@@ -499,7 +503,7 @@ div.message:before {
     background-color: #FFF;
     padding: 12px 14px 12px 10px;
     content: "i";
-    color: #a0d3e8;
+    color: #659E6E;
 }
 
 div.message.error {
@@ -520,7 +524,7 @@ div.message.hidden {
 .vertical-table th {
     padding: 0.5625rem 0.625rem;
     font-size: 0.875rem;
-    color: #1798A5;
+    color: #80622B;
     border: none;
     text-align: left;
 }
@@ -557,16 +561,16 @@ div.message.hidden {
 }
 
 .content h3 {
-    color: #be140b;
+    color: #520303;
     padding-bottom: 0.5rem;
     margin-bottom: 20px;
 }
 
 .content h4 {
-    color: #be140b;
+    color: #520303;
     padding-bottom: 0.5rem;
     margin-bottom: 20px;
-    border-bottom: 2px solid #be140b;
+    border-bottom: 2px solid #520303;
 }
 
 .content .related h4 {
