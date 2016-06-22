@@ -30,7 +30,20 @@ input[type="text"],input[type="password"]{
     font-weight: bold;
     color: WHITE;
 }
-
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: WHITE;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: WHITE;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: WHITE;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: WHITE;
+}
 top-bar expanded{
     display: none !important;   
 }

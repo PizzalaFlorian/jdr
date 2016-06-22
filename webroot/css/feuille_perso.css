@@ -34,7 +34,7 @@ th{
     text-align: center !important;
 }
 
-input {
+.personnages input {
     width:200px !important;
     height: auto !important;
     margin: 0 auto !important;
@@ -43,7 +43,9 @@ input {
     font-size:12px !important;
     -moz-border-radius: 10px !important;
     -webkit-border-radius: 10px !important;
-    border-radius: 10px !important
+    -box-shadow:10px 10px 10px black inset !important;
+    border-radius: 10px !important;
+    background: transparent !important;
 }
 
 .decale{
