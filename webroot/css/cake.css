@@ -35,6 +35,7 @@ header .header-title {
 
 legend {
     color:#997737;
+    background: transparent;
 }
 
 .row {
@@ -165,7 +166,7 @@ button {
 
 select[multiple] {
     min-height:150px;
-    background: none;
+    background: transparent;
 }
 input[type=checkbox],
 input[type=radio] {
@@ -178,6 +179,7 @@ input[type=radio] {
     display: inline;
     width: auto;
     margin-right: 10px;
+    background: transparent;
 }
 
 .error label,

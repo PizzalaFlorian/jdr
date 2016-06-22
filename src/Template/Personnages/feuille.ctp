@@ -16,9 +16,11 @@
 	    	<h3><?= $personnage->prenom ?> <?= $personnage->nom ?></h3>
 	    </div>
 	    <div style="float:right">
-	    <?= $this->Html->link(__('Modifier perso'), ['action' => 'edit', $personnage->id]) ?>
-	    <br>
-	    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $personnage->id], ['confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
+	    	<?= $this->Html->link(__('Retour'), ['action' => 'index']) ?>
+	    	<br>
+	    	<?= $this->Html->link(__('Modifier perso'), ['action' => 'edit', $personnage->id]) ?>
+	    	<br>
+	    	<?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $personnage->id], ['confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
     	</div>
     </div>
     <table cellpadding="0" cellspacing="0">

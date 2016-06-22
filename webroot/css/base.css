@@ -667,7 +667,8 @@ textarea {
 }
 
 select {
-    width: 100%
+    width: 100%;
+    background: transparent;
 }
 
 .row {
@@ -2383,7 +2384,8 @@ textarea {
     -moz-transition: border-color 0.15s linear, background 0.15s linear;
     -ms-transition: border-color 0.15s linear, background 0.15s linear;
     -o-transition: border-color 0.15s linear, background 0.15s linear;
-    transition: border-color 0.15s linear, background 0.15s linear
+    transition: border-color 0.15s linear, background 0.15s linear;
+    background: transparent;
 }
 
 input[type="text"]:focus,
@@ -2500,7 +2502,8 @@ form .row .prefix-radius.row.collapse button {
     -webkit-border-bottom-right-radius: 3px;
     -webkit-border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px
+    border-top-right-radius: 3px;
+    background: transparent;
 }
 
 form .row .prefix-radius.row.collapse .prefix {
@@ -2601,7 +2604,8 @@ textarea {
 select {
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
-    background-color: #FAFAFA;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 1);
+    background: transparent;
     border-radius: 0;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
     background-position: 100% center;
@@ -2627,7 +2631,7 @@ select.radius {
 }
 
 select:hover {
-    background-color: #f3f3f3;
+    background: #fff;
     border-color: #999
 }
 
@@ -2667,7 +2671,7 @@ fieldset {
 }
 
 fieldset legend {
-    background: #fff;
+    background: transparent;
     font-weight: bold;
     margin-left: -0.1875rem;
     margin: 0;
@@ -2821,7 +2825,8 @@ meta.foundation-mq-topbar {
 .top-bar form,
 .top-bar input,
 .top-bar select {
-    margin-bottom: 0
+    margin-bottom: 0;
+    background: transparent;
 }
 
 .top-bar input,
@@ -2829,7 +2834,8 @@ meta.foundation-mq-topbar {
     font-size: 0.75rem;
     height: 1.75rem;
     padding-bottom: .35rem;
-    padding-top: .35rem
+    padding-top: .35rem;
+    background: transparent;
 }
 
 .top-bar .button,
@@ -3355,7 +3361,8 @@ meta.foundation-mq-topbar {
         font-size: 0.875rem;
         height: 1.75rem;
         position: relative;
-        top: 0.53125rem
+        top: 0.53125rem;
+        background: transparent;
     }
     .top-bar.expanded {
         background: #333
