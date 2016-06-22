@@ -26,20 +26,20 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th class="center"><a>Race</a></th>
-                <th class="center"><a>Âge</a></th>
-                <th class="center"><a>Profession</a></th>
-                <th class="center"><a>Niveau</a></th>
-                <th class="center"><a>Expérience</a></th>
+                <th><div class="c1">Race</div></th>
+                <th ><div class="c2">Âge</div></th>
+                <th ><div class="c3">Profession</div></th>
+                <th ><div class="c4">Niveau</div></th>
+                <th ><div class="c5">Expérience</div></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="center"><?= $this->Form->input('race',['label'=>false]) ?></td>
-                <td class="center"><?= $this->Form->input('age',['label'=>false]) ?></td>
-                <td class="center"><?= $this->Form->input('profession',['label'=>false]) ?></td>
-                <td class="center"><?= $this->Form->input('niveau',['label'=>false]) ?></td>
-                <td class="center"><?= $this->Form->input('experience',['label'=>false]) ?></td>
+                <td ><?= $this->Form->input('race',['label'=>false]) ?></td>
+                <td ><?= $this->Form->input('age',['label'=>false]) ?></td>
+                <td ><?= $this->Form->input('profession',['label'=>false]) ?></td>
+                <td ><?= $this->Form->input('niveau',['label'=>false]) ?></td>
+                <td ><?= $this->Form->input('experience',['label'=>false]) ?></td>
             </tr>
         </tbody>
     </table>

@@ -16,6 +16,21 @@ fieldset,table{
     font-size: 12px;
 }
 
+.c1{
+    margin-left:41%;
+}
+.c2{
+    margin-left:42%;
+}
+.c3{
+    margin-left:35.5%;
+}
+.c4{
+    margin-left:36.8%;
+}
+.c5{
+    margin-left:32%;
+}
 a, td, th{
     padding:0 !important;
     width: auto;
