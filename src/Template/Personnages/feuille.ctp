@@ -1,5 +1,4 @@
 <?php
-    echo $this->element('sidebar');
     echo $this->Html->css('feuille_perso');
    
 ?>

@@ -34,20 +34,6 @@ $cakeDescription = 'Les Amis du JDR';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-2 medium-2 columns">
-            <li class="name">
-                <h1><a href="">Jdr</a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><?= $this->Html->link(__('Deconnexion'), [
-                'controller' => 'users',
-                'action' => 'logout']) ?></li>
-            </ul>
-        </div>
-    </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>

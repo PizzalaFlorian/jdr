@@ -28,20 +28,38 @@ $cakeDescription = 'Les Amis du JDR';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
-
+    <?= $this->Html->css('layout.css') ?>
+    
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
+        <ul class="title-area large-2 medium-2 columns">
             <li class="name">
                 <h1><a href="">Jdr</a></h1>
             </li>
         </ul>
         <div class="top-bar-section">
-           <ul class="right">
+            <ul class="center">
+                <li>
+                    <?= $this->Html->link(__('règles de jeu'), ['controller'=>'docs','action' => 'rules']) ?>
+                </li>
+                <li>
+                    <?= $this->Html->link(__('lore de jeu'), ['controller'=>'docs','action' => 'lore']) ?>
+                </li>
+                <li>
+                    <?= $this->Html->link(__('races jouables'), ['controller'=>'docs','action' => 'races']) ?>
+                </li>
+                <li>
+                    <?= $this->Html->link(__('professions'), ['controller'=>'docs','action' => 'professions']) ?>
+                </li>
+                <li>
+                    <?= $this->Html->link(__('feuilles personnages'), ['controller'=>'personnages','action' => 'index']) ?>
+                </li>
+            </ul>
+            <ul class="right">
                 <li><?= $this->Html->link(__('Deconnexion'), [
                 'controller' => 'users',
                 'action' => 'logout']) ?></li>

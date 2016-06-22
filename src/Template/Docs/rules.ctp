@@ -1,6 +1,3 @@
-<?php
-    echo $this->element('sidebar');
-?>
 
 <div class="docs form large-10 medium-10 columns content">
 

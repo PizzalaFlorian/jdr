@@ -376,13 +376,26 @@ pre {
     color: red;
     margin-right: 9px;
 }
-
+.top-bar.expanded {
+    margin-top:0 !important;
+    top: 0 !important;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
 .top-bar.expanded .title-area {
-    background: #D69927;
+    /*background: #D69927;*/
+    background-image:url("../img/pierre2.jpg") !important;
+    background-repeat: repeat-x;
+    background-size: contain;
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #D69927;
+    /*background: #D69927;*/
+    background-image:url("../img/pierre2.jpg");
+    background-repeat: repeat-x;
+    background-size: 115px 45px;
+    height:45px;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -539,12 +552,18 @@ div.message.hidden {
 
 .content {
     padding: 2rem;
+    transform: translateX(10%);
 }
 
 /* Use 'one true layout' methods to get equal height columns */
 .container {
+    margin-top:45px;
     overflow: hidden;
-    min-height: 92%; /* full height almost always */
+    min-height: 100%; /* full height almost always */
+    background-image: url("../img/font2_50.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Force equal height by overflowing */

@@ -16,9 +16,7 @@ class PersonnagesController extends AppController
         $personnage = $this->Personnages->get($id, [
             'contain' => []
         ]);
-        // $this->Flash->success(__('Page en cours de création, ne pas rager'));
-        $this->viewBuilder()->layout('myLayout');
-
+       
         $armes = TableRegistry::get('armes')
             ->find()
             ->where(['personnages_id'=>$personnage->id])
@@ -124,7 +122,7 @@ class PersonnagesController extends AppController
     public function index()
     {
         $personnages = $this->paginate($this->Personnages);
-        $this->viewBuilder()->layout('myLayout');
+        
 
         $this->set(compact('personnages'));
         $this->set('_serialize', ['personnages']);
@@ -139,7 +137,7 @@ class PersonnagesController extends AppController
      */
     public function view($id = null)
     {
-        $this->viewBuilder()->layout('myLayout');
+        
         $personnage = $this->Personnages->get($id, [
             'contain' => []
         ]);
@@ -155,7 +153,7 @@ class PersonnagesController extends AppController
      */
     public function add()
     {
-        $this->viewBuilder()->layout('myLayout');
+        
         $personnage = $this->Personnages->newEntity();
         if ($this->request->is('post')) {
             $personnage = $this->Personnages->patchEntity($personnage, $this->request->data);
@@ -179,7 +177,7 @@ class PersonnagesController extends AppController
      */
     public function edit($id = null)
     {
-        $this->viewBuilder()->layout('myLayout');
+        
         $personnage = $this->Personnages->get($id, [
             'contain' => []
         ]);
