@@ -1754,7 +1754,7 @@ button,
     padding: 1rem 2rem 1.0625rem 2rem;
     font-size: 1rem;
     background-color: #80622B;
-    border-color: #007095;
+    border-color: #80622B;
     color: #fff;
     transition: background-color 300ms ease-out
 }
@@ -1930,7 +1930,7 @@ button[disabled],
 .button.disabled,
 .button[disabled] {
     background-color: #80622B;
-    border-color: #007095;
+    border-color: #80622B;
     color: #fff;
     box-shadow: none;
     cursor: default;
@@ -1945,7 +1945,7 @@ button[disabled]:focus,
 .button.disabled:focus,
 .button[disabled]:hover,
 .button[disabled]:focus {
-    background-color: #007095
+    background-color: #80622B
 }
 
 button.disabled:hover,
@@ -3002,7 +3002,7 @@ meta.foundation-mq-topbar {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
     background-color: #80622B;
-    border-color: #007095;
+    border-color: #80622B;
     color: #fff
 }
 
@@ -3101,13 +3101,13 @@ meta.foundation-mq-topbar {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
     background-color: #80622B;
-    border-color: #007095;
+    border-color: #80622B;
     color: #fff
 }
 
 .top-bar-section ul li>button:hover,
 .top-bar-section ul li>button:focus {
-    background-color: #007095
+    background-color: #80622B
 }
 
 .top-bar-section ul li>button:hover,
