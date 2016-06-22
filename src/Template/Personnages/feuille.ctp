@@ -26,11 +26,11 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th><div class="c1">Race</div></th>
-                <th ><div class="c2">Âge</div></th>
-                <th ><div class="c3">Profession</div></th>
-                <th ><div class="c4">Niveau</div></th>
-                <th ><div class="c5">Expérience</div></th>
+                <th><div class="c">Race</div></th>
+                <th ><div class="c">Âge</div></th>
+                <th ><div class="c">Profession</div></th>
+                <th ><div class="c">Niveau</div></th>
+                <th ><div class="c">Expérience</div></th>
             </tr>
         </thead>
         <tbody>

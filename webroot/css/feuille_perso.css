@@ -16,21 +16,12 @@ fieldset,table{
     font-size: 12px;
 }
 
-.c1{
-    margin-left:41%;
+.c{
+    width: 190px;
+    margin:0 auto !important;
+    text-align: center;
 }
-.c2{
-    margin-left:42%;
-}
-.c3{
-    margin-left:35.5%;
-}
-.c4{
-    margin-left:36.8%;
-}
-.c5{
-    margin-left:32%;
-}
+
 a, td, th{
     padding:0 !important;
     width: auto;
@@ -60,6 +51,9 @@ input {
     -webkit-border-radius: 10px !important;
     border-radius: 10px !important;
     background: transparent !important;
+}
+input[type="number"] {
+    padding-left:12px !important;
 }
 
 .decale{
