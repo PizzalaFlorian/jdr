@@ -38,7 +38,8 @@ $cakeDescription = 'Les Amis du JDR';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-2 medium-2 columns">
             <li class="name">
-                <h1><a href="">Jdr</a></h1>
+                <!--<h1><a href="">Jdr</a></h1>-->
+                <?= $this->Html->image('logo.png') ?>
             </li>
         </ul>
         <div class="top-bar-section">

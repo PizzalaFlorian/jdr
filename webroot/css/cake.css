@@ -560,7 +560,7 @@ div.message.hidden {
     margin-top:45px;
     overflow: hidden;
     min-height: 100%; /* full height almost always */
-    background-image: url("../img/font2_50.png");
+    background-image: url("../img/font_p.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

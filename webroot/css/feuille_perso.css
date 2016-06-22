@@ -20,6 +20,11 @@ a, td, th{
     padding:0 !important;
     width: auto;
 }
+
+.top-bar-section .center li a, .top-bar-section .right li a{
+    padding-left:15px !important;
+    padding-right:15px !important;
+}
 th{
     width: 100px !important;
     margin:0 !important;

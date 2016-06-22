@@ -11,3 +11,7 @@ fieldset{
 .center{
 	text-align: center;
 }
+
+table{
+	background: transparent !important;
+}
