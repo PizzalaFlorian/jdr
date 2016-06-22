@@ -1,55 +1,57 @@
 <?php
     echo $this->element('sidebar');
+    echo $this->Html->css('feuille_perso');
    
 ?>
 
 <div class="personnages form large-10 medium-10 columns content">
-    <h3><?= $personnage->prenom ?> <?= $personnage->nom ?></h3>
+    
     <fieldset>
-   	<div style="overflow:hidden;">
-	    <div style="float:left">
-	    <?= $this->Html->link(__('Modifier perso'), ['action' => 'edit', $personnage->id]) ?>
-	    </div>
-	    <div style="float:right">
-	    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $personnage->id], ['confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
-    	</div>
-    </div>
+   	
     <?= $this->Form->create($personnage) ?>
     <?php
     	//debug($personnage);
     ?>
-    <h4>Identitée</h4>
+    <div style="overflow:hidden;">
+	    <div style="float:left">
+	    	<h3><?= $personnage->prenom ?> <?= $personnage->nom ?></h3>
+	    </div>
+	    <div style="float:right">
+	    <?= $this->Html->link(__('Modifier perso'), ['action' => 'edit', $personnage->id]) ?>
+	    <br>
+	    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $personnage->id], ['confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
+    	</div>
+    </div>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('Race') ?></th>
-                <th><?= $this->Paginator->sort('Age') ?></th>
-                <th><?= $this->Paginator->sort('Profession') ?></th>
-                <th><?= $this->Paginator->sort('Niveau') ?></th>
-                <th><?= $this->Paginator->sort('Expérience') ?></th>
+                <th class="center"><a>Race</a></th>
+                <th class="center"><a>Âge</a></th>
+                <th class="center"><a>Profession</a></th>
+                <th class="center"><a>Niveau</a></th>
+                <th class="center"><a>Expérience</a></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><?= $this->Form->input('race',['label'=>false]) ?></td>
-                <td><?= $this->Form->input('age',['label'=>false]) ?></td>
-                <td><?= $this->Form->input('profession',['label'=>false]) ?></td>
-                <td><?= $this->Form->input('niveau',['label'=>false]) ?></td>
-                <td><?= $this->Form->input('experience',['label'=>false]) ?></td>
+                <td class="center"><?= $this->Form->input('race',['label'=>false]) ?></td>
+                <td class="center"><?= $this->Form->input('age',['label'=>false]) ?></td>
+                <td class="center"><?= $this->Form->input('profession',['label'=>false]) ?></td>
+                <td class="center"><?= $this->Form->input('niveau',['label'=>false]) ?></td>
+                <td class="center"><?= $this->Form->input('experience',['label'=>false]) ?></td>
             </tr>
         </tbody>
     </table>
 
-    <div class="personnages form large-6 medium-6 columns content">
-	    <h4>Stats</h4>
+    <div class="medium-block">
 	    <table class="vertical-table">
 	        <tr>
 	            <th><?= __('Vie') ?></th>
 	            <td>
-		            <div style="display: inline-block;width:80%;">
+		            <div class="decale">
 		            	<?= $this->Form->input('pv',['label'=>false]) ?>
 		            </div>
-		            <div style="display: inline-block;">
+		            <div class="decaleRight">
 		             / <?= h($personnage->pv_max) ?>
 		            </div>
 	             </td>
@@ -73,14 +75,14 @@
 	            <td>
 	            <?php 
 	            	if($personnage->archetype == 'commun'){
-	            		echo $this->Form->input('pa',['label'=>false]);
+	            		echo $this->Form->input('pa',['label'=>false,'class'=>"decale"]);
 	            	}
 	            	if($personnage->archetype == 'mage'){
 	            		//echo $this->Form->input('pm',['label'=>false]);
-	            		echo '<div style="display: inline-block;width:75%;">';
+	            		echo '<div class="decale">';
 		            	echo $this->Form->input('pm',['label'=>false]) ;
 			            echo'</div>
-			            <div style="display: inline-block;">
+			            <div class="decaleRight">
 			             /  ';
 			            echo h($personnage->pm_max);
 			            echo '</div>';
@@ -93,42 +95,35 @@
 	        </tr>
 	        <tr>
 	            <th><?= __('Classe d\'armure') ?></th>
-	            <td><?= $this->Form->input('ca',['label'=>false]) ?></td>
+	            <td><?= $this->Form->input('ca',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	        <tr>
 	            <th><?= __('Point de destin') ?></th>
-	            <td><?= $this->Form->input('destin',['label'=>false]) ?></td>
+	            <td><?= $this->Form->input('destin',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	    </table>
     </div>
-    <div class="personnages form large-6 medium-6 columns content">
-	    <h4>Caractéristiques</h4>
+    <div class="medium-block">
 	    <table class="vertical-table">
 	        <tr>
 	            <th><?= __('Physique') ?></th>
-	            <td><?= $this->Form->input('physique',['label'=>false]) ?></td>
+	            <td><?= $this->Form->input('physique',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	        <tr>
 	            <th><?= __('Adresse') ?></th>
-	            <td><?= $this->Form->input('adresse',['label'=>false]) ?></td>
+	            <td><?= $this->Form->input('adresse',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	        <tr>
 	            <th><?= __('Social') ?></th>
-	            <td><?= $this->Form->input('social',['label'=>false]) ?></td>
+	            <td><?= $this->Form->input('social',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	        <tr>
 	            <th><?= __('Esprit') ?></th>
-	            <td><?= $this->Form->input('esprit',['label'=>false]) ?></td>
+	            <td><?= $this->Form->input('esprit',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	    </table>
    	</div>
-   	</fieldset> 
-</div> 
-<div class="personnages form large-10 medium-10 columns content" id="Equipements">
-	<fieldset> 
-	<h4>Equipements</h4>
-   	<div class="personnages form large-6 medium-6 columns content">
-   		 <h4>Monaie</h4>
+   	<div class="medium-block">
 	    <table class="vertical-table">
 	        <tr>
 	            <th><?= __('Or') ?></th>
@@ -145,12 +140,7 @@
 	    </table>
    	</div>
    	</fieldset> 
- </div>
-
- <!-- FOOTER -->
- <div class="personnages form large-10 medium-10 columns content">
- 		
-		<?= $this->Form->button(__('Mettre a jour')) ?>  
-		<?= $this->Form->end() ?>	
+</div> 
+	<?= $this->Form->end() ?>
  </div>
    	

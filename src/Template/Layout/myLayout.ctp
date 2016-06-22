@@ -13,7 +13,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'Site JDR';
+$cakeDescription = 'Les Amis du JDR';
 ?>
 <!DOCTYPE html>
 <html>

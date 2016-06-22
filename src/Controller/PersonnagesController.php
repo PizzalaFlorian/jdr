@@ -16,7 +16,7 @@ class PersonnagesController extends AppController
         $personnage = $this->Personnages->get($id, [
             'contain' => []
         ]);
-        $this->Flash->success(__('Page en cours de création, ne pas rager'));
+        // $this->Flash->success(__('Page en cours de création, ne pas rager'));
         $this->viewBuilder()->layout('myLayout');
 
         $armes = TableRegistry::get('armes')

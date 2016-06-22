@@ -1,13 +1,13 @@
 <?php
     echo $this->element('sidebar');
+    echo $this->Html->css('main');
 ?>
 
 <div class="personnages index large-10 medium-9 columns content">
-    <h3><?= __('Personnages') ?></h3>
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('nouveau personnage'), ['action' => 'add']) ?></li>
-    </ul>
+    <div style="overflow:hidden;">
+        <h3 class="center" style="float:left"><?= __('Personnages') ?></h3>
+        <div style="float:right"><?= $this->Html->link(__('nouveau personnage'), ['action' => 'add'],['class'=>'button']) ?></div>
+    </div>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

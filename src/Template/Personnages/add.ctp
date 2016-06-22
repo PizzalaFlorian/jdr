@@ -68,9 +68,9 @@
             echo $this->Form->hidden('ca',['value'=>0]);
             echo $this->Form->hidden('destin',['value'=>1]);
             
-            echo $this->Form->input('gold');
-            echo $this->Form->input('argent');
-            echo $this->Form->input('bronze');
+            echo $this->Form->hidden('gold',['value'=>0]);
+            echo $this->Form->hidden('argent',['value'=>0]);
+            echo $this->Form->hidden('bronze',['value'=>0]);
             
             echo $this->Form->input('niveau');
             echo $this->Form->input('experience');
