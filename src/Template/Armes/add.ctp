@@ -1,12 +1,5 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Armes'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Personnages'), ['controller' => 'Personnages', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Personnage'), ['controller' => 'Personnages', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="armes form large-9 medium-8 columns content">
+
+<div class="armes form large-10 medium-10 columns content">
     <?= $this->Form->create($arme) ?>
     <fieldset>
         <legend><?= __('Add Arme') ?></legend>
@@ -22,5 +15,6 @@
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Html->link(__('Retour'), ['controller' => 'Personnages', 'action' => 'index']) ?>
     <?= $this->Form->end() ?>
 </div>

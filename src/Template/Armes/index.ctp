@@ -1,13 +1,7 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Arme'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Personnages'), ['controller' => 'Personnages', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Personnage'), ['controller' => 'Personnages', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="armes index large-9 medium-8 columns content">
-    <h3><?= __('Armes') ?></h3>
+
+<div class="armes index large-10 medium-10 columns content">
+    <h3 style="float:left"><?= __('Armes') ?></h3>
+    <div style="float:right"><?= $this->Html->link(__('Nouvelle Arme'), ['action' => 'add'],['class'=>'button']) ?></div>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

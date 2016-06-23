@@ -1,6 +1,6 @@
 <?php
     echo $this->Html->css('feuille_perso');
-   
+    echo $this->Html->script('feuille');
 ?>
 
 <div class="personnages form large-10 medium-10 columns content">
