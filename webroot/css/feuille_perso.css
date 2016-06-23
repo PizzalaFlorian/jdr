@@ -56,6 +56,9 @@ input {
     border-radius: 10px !important;
     background: transparent !important;
 }
+
+
+
 input[type="number"] {
     padding-left:12px !important;
 }
@@ -79,8 +82,8 @@ input[type="number"] {
     /*margin-left:18%;*/
 }
 .decaleRight{
-    float: left;
-    margin-left:3px;
+    float: right;
+    /*margin-left:3px;*/
     /*transform: translateY(50%);*/
     font-size:10px !important;
 }
@@ -141,7 +144,7 @@ img:hover{
 }
 
 .back_armes{
-    background: rgba(163,190,199,0.5) !important;
+    background: rgba(99,99,99,0.2) !important;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -157,4 +160,74 @@ img:hover{
 }
 .armes img{
     height:18px !important;
+}
+.THH{
+    background: rgba(140,140,140,0.4) !important;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px; 
+    padding: 5px !important;
+}
+
+.PH{
+    background: rgba(245,91,91,0.4) !important;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.AD{
+    background: rgba(242,142,56,0.4) !important;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.SO{
+    background: rgba(68,168,62,0.4) !important;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;    
+}
+
+.ES{
+    background: rgba(163,190,199,0.4) !important;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;    
+}
+.MM{
+    background: rgba(163,190,199,0.4) !important;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px; 
+    padding: 5px !important;
+}
+
+.PV{
+    background: rgba(255,23,23,0.4) !important;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;    
+}
+
+.PM{
+    background: rgba(134,72,163,0.4) !important;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;    
+}
+
+.CA{
+    background: rgba(165,167,168,0.4) !important;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;    
+}
+
+.PD{
+    background: rgba(235,197,45,0.4) !important;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;    
 }

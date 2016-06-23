@@ -28,31 +28,32 @@
 	    	<?= $this->Html->link($this->Html->image('suppr.png', array('title' => "Supprimer")), ['action' => 'delete', $personnage->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
     	</div>
     </div>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th><div class="c">Race</div></th>
-                <th ><div class="c">Âge</div></th>
-                <th ><div class="c">Profession</div></th>
-                <th ><div class="c">Niveau</div></th>
-                <th ><div class="c">Expérience</div></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td ><?= $this->Form->input('race',['label'=>false]) ?></td>
-                <td ><?= $this->Form->input('age',['label'=>false]) ?></td>
-                <td ><?= $this->Form->input('profession',['label'=>false]) ?></td>
-                <td ><?= $this->Form->input('niveau',['label'=>false]) ?></td>
-                <td ><?= $this->Form->input('experience',['label'=>false]) ?></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="medium-block">
+    <div class="THH">
+	    <table cellpadding="0" cellspacing="0">
+	        <thead>
+	            <tr>
+	                <th><div class="c">Race</div></th>
+	                <th><div class="c">Âge</div></th>
+	                <th><div class="c">Profession</div></th>
+	                <th><div class="c">Niveau</div></th>
+	                <th><div class="c">Expérience</div></th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr>
+	                <td ><?= $this->Form->input('race',['label'=>false]) ?></td>
+	                <td ><?= $this->Form->input('age',['label'=>false]) ?></td>
+	                <td ><?= $this->Form->input('profession',['label'=>false]) ?></td>
+	                <td ><?= $this->Form->input('niveau',['label'=>false]) ?></td>
+	                <td ><?= $this->Form->input('experience',['label'=>false]) ?></td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+    <div class="medium-block THH">
 	    <table class="vertical-table">
 	        <tr>
-	            <th><?= __('Vie') ?></th>
+	            <th class="PV"><?= __('Vie') ?></th>
 	            <td>
 		            <div class="decale">
 		            	<?= $this->Form->input('pv',['label'=>false]) ?>
@@ -63,7 +64,7 @@
 	             </td>
 	        </tr>
 	        <tr>
-	           <th>
+	           <th class="PM">
 	           <?php 
 	         		$string = 'toto';
 	            	if($personnage->archetype == 'commun'){
@@ -100,11 +101,11 @@
 	            </td>
 	        </tr>
 	        <tr>
-	            <th><?= __('Classe d\'armure') ?></th>
+	            <th class="CA"><?= __('Classe d\'armure') ?></th>
 	            <td><?= $this->Form->input('ca',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	        <tr>
-	            <th><?= __('Point de destin') ?></th>
+	            <th class="PD"><?= __('Point de destin') ?></th>
 	            <td><?= $this->Form->input('destin',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	    </table>
@@ -112,12 +113,12 @@
     <?php 
    		if($personnage->archetype == "mage"){
    	?>
-   	<div class="medium-block">
+   	<div class="medium-block MM">
 	    <table>
 	        <tbody>
 	        	<tr>
-	                <td><div class="center btext">Ecole Majeure</div></td>
-	                <td><div class="center btext">Ecole Mineure</div></td>
+	                <td class="M1"><div class="center btext">Ecole Majeure</div></td>
+	                <td class="M2"><div class="center btext">Ecole Mineure</div></td>
 	            </tr>
 	            <tr>
 	                <td class="big-hole">
@@ -169,22 +170,22 @@
    	<?php
    		}
    	?>
-    <div class="medium-block">
+    <div class="medium-block THH">
 	    <table class="vertical-table">
-	        <tr>
-	            <th><?= __('Physique') ?></th>
+	        <tr >
+	            <th class="PH"><?= __('Physique') ?></th>
 	            <td><?= $this->Form->input('physique',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	        <tr>
-	            <th><?= __('Adresse') ?></th>
+	            <th class="AD"><?= __('Adresse') ?></th>
 	            <td><?= $this->Form->input('adresse',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	        <tr>
-	            <th><?= __('Social') ?></th>
+	            <th class="SO"><?= __('Social') ?></th>
 	            <td><?= $this->Form->input('social',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	        <tr>
-	            <th><?= __('Esprit') ?></th>
+	            <th class="ES"><?= __('Esprit') ?></th>
 	            <td><?= $this->Form->input('esprit',['label'=>false,'class'=>"decale"]) ?></td>
 	        </tr>
 	    </table>
@@ -192,7 +193,7 @@
    	<?php 
    		if($personnage->archetype == "commun" || $personnage->archetype == "creatif"){
    	?>
-   	<div class="medium-block">
+   	<div class="medium-block THH">
 	    <table class="vertical-table">
 	        <tr>
 	            <th><?= __('Or') ?></th>
