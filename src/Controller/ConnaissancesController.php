@@ -55,10 +55,10 @@ class ConnaissancesController extends AppController
         if ($this->request->is('post')) {
             $connaissance = $this->Connaissances->patchEntity($connaissance, $this->request->data);
             if ($this->Connaissances->save($connaissance)) {
-                $this->Flash->success(__('The connaissance has been saved.'));
+                //$this->Flash->success(__('The connaissance has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The connaissance could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The connaissance could not be saved. Please, try again.'));
             }
         }
         $competences = $this->Connaissances->Competences->find('list', ['limit' => 200]);
@@ -82,10 +82,10 @@ class ConnaissancesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $connaissance = $this->Connaissances->patchEntity($connaissance, $this->request->data);
             if ($this->Connaissances->save($connaissance)) {
-                $this->Flash->success(__('The connaissance has been saved.'));
+                //$this->Flash->success(__('The connaissance has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The connaissance could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The connaissance could not be saved. Please, try again.'));
             }
         }
         $competences = $this->Connaissances->Competences->find('list', ['limit' => 200]);
@@ -106,9 +106,9 @@ class ConnaissancesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $connaissance = $this->Connaissances->get($id);
         if ($this->Connaissances->delete($connaissance)) {
-            $this->Flash->success(__('The connaissance has been deleted.'));
+            //$this->Flash->success(__('The connaissance has been deleted.'));
         } else {
-            $this->Flash->error(__('The connaissance could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The connaissance could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }

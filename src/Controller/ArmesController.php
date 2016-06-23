@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Armes Controller
@@ -49,20 +50,26 @@ class ArmesController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id=null)
     {
         $arme = $this->Armes->newEntity();
+        $personnage = TableRegistry::get('personnages')
+            ->find()
+            ->where(['id'=>$id])
+            ->first();
         if ($this->request->is('post')) {
             $arme = $this->Armes->patchEntity($arme, $this->request->data);
             if ($this->Armes->save($arme)) {
-                $this->Flash->success(__('The arme has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                //$this->Flash->success(__('The arme has been saved.'));
+                return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$personnage->id]);
             } else {
-                $this->Flash->error(__('The arme could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The arme could not be saved. Please, try again.'));
             }
         }
-        $personnages = $this->Armes->Personnages->find('list', ['limit' => 200]);
-        $this->set(compact('arme', 'personnages'));
+       
+            
+        $this->set('personnage',$personnage);
+        $this->set(compact('arme'));
         $this->set('_serialize', ['arme']);
     }
 
@@ -81,14 +88,18 @@ class ArmesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $arme = $this->Armes->patchEntity($arme, $this->request->data);
             if ($this->Armes->save($arme)) {
-                $this->Flash->success(__('The arme has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                //$this->Flash->success(__('The arme has been saved.'));
+                return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$arme->personnages_id]);
             } else {
-                $this->Flash->error(__('The arme could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The arme could not be saved. Please, try again.'));
             }
         }
-        $personnages = $this->Armes->Personnages->find('list', ['limit' => 200]);
-        $this->set(compact('arme', 'personnages'));
+        $personnage = TableRegistry::get('personnages')
+            ->find()
+            ->where(['id'=>$arme->personnages_id])
+            ->first();
+        $this->set('personnage',$personnage);
+        $this->set(compact('arme'));
         $this->set('_serialize', ['arme']);
     }
 
@@ -101,13 +112,14 @@ class ArmesController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        //$this->request->allowMethod(['post', 'delete']);
         $arme = $this->Armes->get($id);
+        $id_perso = $arme->personnages_id;
         if ($this->Armes->delete($arme)) {
-            $this->Flash->success(__('The arme has been deleted.'));
+            //$this->Flash->success(__('The arme has been deleted.'));
         } else {
-            $this->Flash->error(__('The arme could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The arme could not be deleted. Please, try again.'));
         }
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller'=>'personnages','action' => 'feuille',$id_perso]);
     }
 }

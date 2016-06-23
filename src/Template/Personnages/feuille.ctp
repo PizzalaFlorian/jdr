@@ -1,6 +1,10 @@
 <?php
     echo $this->Html->css('feuille_perso');
+    echo $this->Html->script('./external/jquery/jquery');
+    echo $this->Html->script('jquery-ui');
+    echo $this->Html->script('jquery-ui.min');
     echo $this->Html->script('feuille');
+    
 ?>
 
 <div class="personnages form large-10 medium-10 columns content">
@@ -11,16 +15,17 @@
     <?php
     	//debug($personnage);
     ?>
+    <div id="p_id" style="display:none"><?= $personnage->id ?></div>
     <div style="overflow:hidden;">
 	    <div style="float:left">
 	    	<h3><?= $personnage->prenom ?> <?= $personnage->nom ?></h3>
 	    </div>
 	    <div style="float:right">
-	    	<?= $this->Html->link(__('Retour'), ['action' => 'index']) ?>
-	    	<br>
-	    	<?= $this->Html->link(__('Modifier perso'), ['action' => 'edit', $personnage->id]) ?>
-	    	<br>
-	    	<?= $this->Html->link(__('Supprimer'), ['action' => 'delete', $personnage->id], ['confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
+	    	<?= $this->Html->link($this->Html->image('retour.png', array('title' => "retour")), ['action' => 'index'],['escape'=>false]) ?>
+	    	
+	    	<?= $this->Html->link($this->Html->image('modif.png', array('title' => "modifier")), ['action' => 'edit', $personnage->id],['escape'=>false]) ?>
+	    	
+	    	<?= $this->Html->link($this->Html->image('suppr.png', array('title' => "Supprimer")), ['action' => 'delete', $personnage->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
     	</div>
     </div>
     <table cellpadding="0" cellspacing="0">
@@ -206,8 +211,76 @@
    	<?php
    		}
    	?>
+   	<div class="adaptative-block back_armes">
+   		<!--<div class="title-categorie center">Armes</div>-->
+	   	<table class="armes">
+	        <thead>
+	            <tr>
+	            	<th class"armes-long"><?= $this->Paginator->sort('nom') ?></th>
+	            	<th class="armes-court"><?= $this->Paginator->sort('porte') ?></th>
+	            	<th class="armes-long"><?= $this->Paginator->sort('degat') ?></th>
+	            	<?php 
+	                	if($personnage->typeCampagne == "science-fiction"){
+	                ?>
+	                <th class="armes-court"><?= $this->Paginator->sort('cdt') ?></th>
+	                <?php
+	                	}
+	                ?>
+	                <th class="armes-long"><?= $this->Paginator->sort('munition') ?></th>
+	                <?php 
+	                	if($personnage->typeCampagne == "science-fiction"){
+	                ?>
+	                <th class="armes-court"><?= $this->Paginator->sort('dura') ?></th>
+	                <?php
+	                	}
+	                ?>
+	               	<th class="armes-long"><?= $this->Paginator->sort('composante') ?></th>
+	                <th class="armes-court"></th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <?php foreach ($armes as $arme): ?>
+	            <tr>
+	            	<td class"armes-long"><?= h($arme->nom) ?></td>
+	            	<td class="armes-court"><?= h($arme->porte) ?></td>
+	            	<td class="armes-long"><?= h($arme->degat) ?></td>
+	            	<?php 
+	                	if($personnage->typeCampagne == "science-fiction"){
+	                ?>
+	                <td class="armes-court"><?= $this->Number->format($arme->cdt) ?></td>
+	                <?php
+	                	}
+	                ?>
+	                <td class="armes-long"><?= h($arme->munition) ?></td>
+	                <?php 
+	                	if($personnage->typeCampagne == "science-fiction"){
+	                ?>
+	                <td class="armes-court"><?= $this->Number->format($arme->dura) ?></td>
+	                 <?php
+	                	}
+	                ?>
+	                <td class="armes-long"><?= h($arme->composante) ?></td>
+	                
+	                <td class="armes-court">
+	                    <?= $this->Html->link($this->Html->image('modif.png', array('title' => "modifier")), ['controller'=>'armes','action' => 'edit', $arme->id],array('escape'=>false)) ?>
+	                    <?= $this->Html->link($this->Html->image('suppr.png', array('title' => "modifier")), ['controller'=>'armes','action' => 'delete', $arme->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $arme->id)]) ?>
+	                </td>
+	            </tr>
+	            <?php endforeach; ?>
+	        </tbody>
+	    </table>
+	    <div class="center">
+	    	<?php
+	    		echo $this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'armes','action' => 'add',$personnage->id),
+		                        array('escape' => false) 
+                    			);
+            ?>
+	    </div>
+   	</div>
    	</fieldset> 
 </div> 
 	<?= $this->Form->end() ?>
- </div>
+</div>
    	

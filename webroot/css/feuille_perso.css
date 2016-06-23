@@ -27,6 +27,10 @@ a, td, th{
     width: auto;
 }
 
+td,th{
+    font-size: 12px !important;
+}
+
 .top-bar-section .center li a, .top-bar-section .right li a{
     padding-left:15px !important;
     padding-right:15px !important;
@@ -112,4 +116,45 @@ img:hover{
 .fat a{
     font-size: 18 !important;
     font-weight: bold;
+}
+
+.adaptative-block{
+    width:420px !important;
+    display:inline-block;
+    margin-top: 5px;
+    font-size:12px;
+}
+.armes{
+    margin:0 auto !important;
+    width:100% !important;
+    position: relative;
+    table-layout:fixed;
+}
+
+.title-categorie{
+    font-weight: bold;
+    color:#520303;
+}
+
+.armes td, .armes th{
+    text-align: center;
+}
+
+.back_armes{
+    background: rgba(163,190,199,0.5) !important;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 2px;
+    padding-bottom: 5px;
+}
+
+.armes .armes-long{
+    width: 70px !important;
+}
+.armes .armes-court{
+    width: 50px !important;
+}
+.armes img{
+    height:18px !important;
 }

@@ -52,10 +52,10 @@ class CompetencesController extends AppController
         if ($this->request->is('post')) {
             $competence = $this->Competences->patchEntity($competence, $this->request->data);
             if ($this->Competences->save($competence)) {
-                $this->Flash->success(__('The competence has been saved.'));
+                //$this->Flash->success(__('The competence has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The competence could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The competence could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('competence'));
@@ -77,10 +77,10 @@ class CompetencesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $competence = $this->Competences->patchEntity($competence, $this->request->data);
             if ($this->Competences->save($competence)) {
-                $this->Flash->success(__('The competence has been saved.'));
+                //$this->Flash->success(__('The competence has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The competence could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The competence could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('competence'));
@@ -99,9 +99,9 @@ class CompetencesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $competence = $this->Competences->get($id);
         if ($this->Competences->delete($competence)) {
-            $this->Flash->success(__('The competence has been deleted.'));
+            //$this->Flash->success(__('The competence has been deleted.'));
         } else {
-            $this->Flash->error(__('The competence could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The competence could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }

@@ -55,10 +55,10 @@ class ArmuresController extends AppController
         if ($this->request->is('post')) {
             $armure = $this->Armures->patchEntity($armure, $this->request->data);
             if ($this->Armures->save($armure)) {
-                $this->Flash->success(__('The armure has been saved.'));
+                //$this->Flash->success(__('The armure has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The armure could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The armure could not be saved. Please, try again.'));
             }
         }
         $personnages = $this->Armures->Personnages->find('list', ['limit' => 200]);
@@ -81,10 +81,10 @@ class ArmuresController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $armure = $this->Armures->patchEntity($armure, $this->request->data);
             if ($this->Armures->save($armure)) {
-                $this->Flash->success(__('The armure has been saved.'));
+                //$this->Flash->success(__('The armure has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The armure could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The armure could not be saved. Please, try again.'));
             }
         }
         $personnages = $this->Armures->Personnages->find('list', ['limit' => 200]);
@@ -104,9 +104,9 @@ class ArmuresController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $armure = $this->Armures->get($id);
         if ($this->Armures->delete($armure)) {
-            $this->Flash->success(__('The armure has been deleted.'));
+            //$this->Flash->success(__('The armure has been deleted.'));
         } else {
-            $this->Flash->error(__('The armure could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The armure could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }

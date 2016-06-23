@@ -55,10 +55,10 @@ class FamiliersController extends AppController
         if ($this->request->is('post')) {
             $familier = $this->Familiers->patchEntity($familier, $this->request->data);
             if ($this->Familiers->save($familier)) {
-                $this->Flash->success(__('The familier has been saved.'));
+                //$this->Flash->success(__('The familier has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The familier could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The familier could not be saved. Please, try again.'));
             }
         }
         $personnages = $this->Familiers->Personnages->find('list', ['limit' => 200]);
@@ -81,10 +81,10 @@ class FamiliersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $familier = $this->Familiers->patchEntity($familier, $this->request->data);
             if ($this->Familiers->save($familier)) {
-                $this->Flash->success(__('The familier has been saved.'));
+                //$this->Flash->success(__('The familier has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The familier could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The familier could not be saved. Please, try again.'));
             }
         }
         $personnages = $this->Familiers->Personnages->find('list', ['limit' => 200]);
@@ -104,9 +104,9 @@ class FamiliersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $familier = $this->Familiers->get($id);
         if ($this->Familiers->delete($familier)) {
-            $this->Flash->success(__('The familier has been deleted.'));
+            //$this->Flash->success(__('The familier has been deleted.'));
         } else {
-            $this->Flash->error(__('The familier could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The familier could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }
