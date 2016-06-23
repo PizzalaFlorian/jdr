@@ -1,7 +1,5 @@
-<?php
-    echo $this->element('sidebar');
-?>
-<div class="personnages form large-10 medium-9 columns content">
+
+<div class="personnages form large-10 medium-10 columns content">
     <?= $this->Form->create($personnage) ?>
     <fieldset>
         <legend><?= __('Add Personnage') ?></legend>

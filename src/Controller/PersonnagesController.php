@@ -98,9 +98,9 @@ class PersonnagesController extends AppController
          if ($this->request->is(['patch', 'post', 'put'])) {
             $personnage = $this->Personnages->patchEntity($personnage, $this->request->data);
             if ($this->Personnages->save($personnage)) {
-                $this->Flash->success(__('The personnage has been saved.'));
+                //$this->Flash->success(__('The personnage has been saved.'));
             } else {
-                $this->Flash->error(__('The personnage could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The personnage could not be saved. Please, try again.'));
             }
         }
 
@@ -159,10 +159,10 @@ class PersonnagesController extends AppController
         if ($this->request->is('post')) {
             $personnage = $this->Personnages->patchEntity($personnage, $this->request->data);
             if ($this->Personnages->save($personnage)) {
-                $this->Flash->success(__('The personnage has been saved.'));
+                //$this->Flash->success(__('The personnage has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The personnage could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The personnage could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('personnage'));
@@ -185,10 +185,10 @@ class PersonnagesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $personnage = $this->Personnages->patchEntity($personnage, $this->request->data);
             if ($this->Personnages->save($personnage)) {
-                $this->Flash->success(__('The personnage has been saved.'));
+                //$this->Flash->success(__('The personnage has been saved.'));
                 return $this->redirect(['action' => 'feuille'.'/'.$id]);
             } else {
-                $this->Flash->error(__('The personnage could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The personnage could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('personnage'));
@@ -204,12 +204,69 @@ class PersonnagesController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        //$this->request->allowMethod(['post', 'delete']);
         $personnage = $this->Personnages->get($id);
+
+        $armes = TableRegistry::get('armes')
+            ->query();
+        $armes    
+            ->delete()
+            ->where(['personnages_id'=>$personnage->id])
+            ->execute();
+
+        $armures = TableRegistry::get('armures')
+            ->query();
+        $armures
+            ->delete()
+            ->where(['personnages_id'=>$personnage->id])
+            ->execute();
+        
+        $objects = TableRegistry::get('objects')
+            ->query();
+        $objects
+            ->delete()
+            ->where(['personnages_id'=>$personnage->id])
+            ->execute();
+
+        $familiers = TableRegistry::get('familiers')
+            ->query();
+        $familiers
+            ->delete()
+            ->where(['personnages_id'=>$personnage->id])
+            ->execute();
+
+        $montures = TableRegistry::get('montures')
+            ->query();
+        $montures
+            ->delete()
+            ->where(['personnages_id'=>$personnage->id])
+            ->execute();
+
+        $competences = TableRegistry::get('connaissances')
+            ->query();
+        $competences
+            ->delete()
+            ->where(['personnages_id' => $personnage->id])
+            ->execute();
+
+        $competences_speciales = TableRegistry::get('specialites')
+            ->query();
+        $competences_speciales
+            ->delete()
+            ->where(['personnages_id' => $personnage->id])
+            ->execute();
+
+        $ecoles = TableRegistry::get('maitrises')
+            ->query();
+        $ecoles
+            ->delete()
+            ->where(['personnages_id' => $personnage->id])
+            ->execute();
+        debug("coucou");   
         if ($this->Personnages->delete($personnage)) {
-            $this->Flash->success(__('The personnage has been deleted.'));
+            //$this->Flash->success(__('The personnage has been deleted.'));
         } else {
-            $this->Flash->error(__('The personnage could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The personnage could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }

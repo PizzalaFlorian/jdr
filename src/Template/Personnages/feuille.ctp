@@ -20,7 +20,7 @@
 	    	<br>
 	    	<?= $this->Html->link(__('Modifier perso'), ['action' => 'edit', $personnage->id]) ?>
 	    	<br>
-	    	<?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $personnage->id], ['confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
+	    	<?= $this->Html->link(__('Supprimer'), ['action' => 'delete', $personnage->id], ['confirm' => __('Are you sure you want to delete # {0}?', $personnage->id)]) ?>
     	</div>
     </div>
     <table cellpadding="0" cellspacing="0">
@@ -146,7 +146,7 @@
 	                			}
 	                		}
 	                		if(isset($token)){
-	                			echo '<div class="fat">'.$token->nom.'</div>';
+	                			echo '<div class="fat">'.$this->Html->link($token->nom, ['controller'=>'maitrises','action' => 'edit', $token->id]).'</div>';
 	                		}
 	                		else{
 	                			echo $this->Html->link(
