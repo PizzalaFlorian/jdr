@@ -1,11 +1,13 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Ecole'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="ecoles index large-9 medium-8 columns content">
-    <h3><?= __('Ecoles') ?></h3>
+
+<div class="ecoles index large-10 medium-10 columns content">
+    <div style="overflow:hidden;">
+        <div style="float:left">
+             <h3><?= __('Ecoles') ?></h3>
+        </div>
+        <div style="float:right">
+            <?= $this->Html->link(__('Ajouter une Ecole'), ['action' => 'add'],['class'=>'button']) ?>
+        </div>
+    </div>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

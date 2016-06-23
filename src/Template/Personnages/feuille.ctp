@@ -104,6 +104,66 @@
 	        </tr>
 	    </table>
     </div>
+    <?php 
+   		if($personnage->archetype == "mage"){
+   	?>
+   	<div class="medium-block">
+	    <table>
+	        <tbody>
+	        	<tr>
+	                <td><div class="center btext">Ecole Majeure</div></td>
+	                <td><div class="center btext">Ecole Mineure</div></td>
+	            </tr>
+	            <tr>
+	                <td class="big-hole">
+	                	<?php
+	                		$token = null;
+	                		if(!empty($ecoles)){
+	                			foreach($ecoles as $e ){
+	                				if($e->type == "majeure")
+	                				$token = $e;
+	                			}
+	                		}
+	                		if(isset($token)){
+	                			echo '<div class="fat">'.$this->Html->link($token->nom, ['controller'=>'maitrises','action' => 'edit', $token->id]).'</div>';
+	                		}
+	                		else{
+	                			echo $this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'maitrises','action' => 'add',$personnage->id.'-majeure'),
+		                        array('escape' => false) 
+                    			);
+	                		}
+	                	?>
+	                </td>
+	                <td class="big-hole">
+	                		<?php
+	                		$token = null;
+	                		if(!empty($ecoles)){
+	                			foreach($ecoles as $e ){
+	                				if($e->type == "mineure")
+	                				$token = $e;
+	                			}
+	                		}
+	                		if(isset($token)){
+	                			echo '<div class="fat">'.$token->nom.'</div>';
+	                		}
+	                		else{
+	                			echo $this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'maitrises','action' => 'add',$personnage->id.'-mineure'),
+		                        array('escape' => false) 
+                    			);
+	                		}
+	                	?>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+   	</div>
+   	<?php
+   		}
+   	?>
     <div class="medium-block">
 	    <table class="vertical-table">
 	        <tr>
@@ -124,6 +184,9 @@
 	        </tr>
 	    </table>
    	</div>
+   	<?php 
+   		if($personnage->archetype == "commun" || $personnage->archetype == "creatif"){
+   	?>
    	<div class="medium-block">
 	    <table class="vertical-table">
 	        <tr>
@@ -140,6 +203,9 @@
 	        </tr>
 	    </table>
    	</div>
+   	<?php
+   		}
+   	?>
    	</fieldset> 
 </div> 
 	<?= $this->Form->end() ?>

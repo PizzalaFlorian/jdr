@@ -81,7 +81,8 @@ class PersonnagesController extends AppController
             ->find()
             ->select(array(
                 'nom' => 'c.nom',
-                'description'=>'c.description'
+                'type'=>'type',
+                'id'=>'maitrises.id'
                 )
             )
              ->join([

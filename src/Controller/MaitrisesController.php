@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Maitrises Controller
@@ -49,21 +50,35 @@ class MaitrisesController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($args=null)
     {
+        $List_args = explode('-',$args);
+        $personnage = TableRegistry::get('personnages')
+            ->find()
+            ->where(['id'=>$List_args[0]])
+            ->first();
+        
+            
         $maitrise = $this->Maitrises->newEntity();
         if ($this->request->is('post')) {
             $maitrise = $this->Maitrises->patchEntity($maitrise, $this->request->data);
             if ($this->Maitrises->save($maitrise)) {
-                $this->Flash->success(__('The maitrise has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                //$this->Flash->success(__('The maitrise has been saved.'));
+                return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$personnage->id]);
             } else {
-                $this->Flash->error(__('The maitrise could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The maitrise could not be saved. Please, try again.'));
             }
         }
-        $ecoles = $this->Maitrises->Ecoles->find('list', ['limit' => 200]);
-        $personnages = $this->Maitrises->Personnages->find('list', ['limit' => 200]);
-        $this->set(compact('maitrise', 'ecoles', 'personnages'));
+       $ecoles = TableRegistry::get('ecoles')
+            ->find()
+            ->toArray();
+        
+        //debug($personnage);
+        $type = $List_args[1];
+        $this->set('type',$type);
+        $this->set('personnage',$personnage);
+        $this->set('ecoles',$ecoles);
+        $this->set(compact('maitrise'));
         $this->set('_serialize', ['maitrise']);
     }
 
@@ -82,15 +97,17 @@ class MaitrisesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $maitrise = $this->Maitrises->patchEntity($maitrise, $this->request->data);
             if ($this->Maitrises->save($maitrise)) {
-                $this->Flash->success(__('The maitrise has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                //$this->Flash->success(__('The maitrise has been saved.'));
+                return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille', $maitrise->personnages_id ]);
             } else {
-                $this->Flash->error(__('The maitrise could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The maitrise could not be saved. Please, try again.'));
             }
         }
-        $ecoles = $this->Maitrises->Ecoles->find('list', ['limit' => 200]);
-        $personnages = $this->Maitrises->Personnages->find('list', ['limit' => 200]);
-        $this->set(compact('maitrise', 'ecoles', 'personnages'));
+        $ecoles = TableRegistry::get('ecoles')
+            ->find()
+            ->toArray();
+        $this->set('ecoles',$ecoles);
+        $this->set(compact('maitrise'));
         $this->set('_serialize', ['maitrise']);
     }
 
@@ -106,9 +123,9 @@ class MaitrisesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $maitrise = $this->Maitrises->get($id);
         if ($this->Maitrises->delete($maitrise)) {
-            $this->Flash->success(__('The maitrise has been deleted.'));
+            //$this->Flash->success(__('The maitrise has been deleted.'));
         } else {
-            $this->Flash->error(__('The maitrise could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The maitrise could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }
