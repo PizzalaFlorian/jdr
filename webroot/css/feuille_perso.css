@@ -104,6 +104,15 @@ input[type="number"] {
 .medium-block{
     width:30%;
     display:inline-block;
+    float:left;
+    margin-left: 2%;
+    margin-top:5px;
+    font-size:12px !important;
+}
+.shorter-block{
+    width:25%;
+    display:inline-block;
+    float:left;
     margin-left: 2%;
     margin-top:5px;
     font-size:12px !important;
@@ -124,7 +133,37 @@ img:hover{
     -webkit-border-radius: 10px !important;
     border-radius: 10px !important;
 }
-
+.item{
+    width:70%;
+    float: left;
+    text-align:center;
+}
+.value{
+    width:20%;
+    float:left;
+    box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.8);
+    -moz-border-radius: 10px !important;
+    -webkit-border-radius: 10px !important;
+    border-radius: 10px !important;
+    text-align:center;
+}
+.action{
+    width:10%;
+    float:left;
+}
+.armures-img img{
+    height: 18px !important;
+}
+.action img{
+    height: 18px !important;
+}
+.small-img-area{
+    width:25px !important;
+}
+.small-img img{
+    max-height: 22px !important;
+    max-width: 18px !important;
+}
 .btext{
     font-size : 12px !important;
     color : #80622B;
@@ -137,8 +176,10 @@ img:hover{
 }
 
 .adaptative-block{
+    top:0px !important;
     width:420px !important;
-    display:inline-block;
+    /*display:inline-block;*/
+    float:left;
     margin-top: 5px;
     font-size:12px;
 }
@@ -159,6 +200,7 @@ img:hover{
 }
 
 .back_armes{
+    display: inline-block;
     background: rgba(99,99,99,0.2) !important;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;

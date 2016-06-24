@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Armures Controller
@@ -49,20 +50,27 @@ class ArmuresController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($path=null)
     {
+        $args = explode('-',$path);
         $armure = $this->Armures->newEntity();
+        $personnage = TableRegistry::get('personnages')
+            ->find()
+            ->where(['id'=>$args[0]])
+            ->first();
+            
         if ($this->request->is('post')) {
             $armure = $this->Armures->patchEntity($armure, $this->request->data);
             if ($this->Armures->save($armure)) {
                 //$this->Flash->success(__('The armure has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$personnage->id]);
             } else {
                 //$this->Flash->error(__('The armure could not be saved. Please, try again.'));
             }
         }
-        $personnages = $this->Armures->Personnages->find('list', ['limit' => 200]);
-        $this->set(compact('armure', 'personnages'));
+        $this->set('personnage',$personnage);
+        $this->set('emplacement',$args[1]);
+        $this->set(compact('armure'));
         $this->set('_serialize', ['armure']);
     }
 
@@ -78,17 +86,21 @@ class ArmuresController extends AppController
         $armure = $this->Armures->get($id, [
             'contain' => []
         ]);
+        $personnage = TableRegistry::get('personnages')
+            ->find()
+            ->where(['id'=>$armure->personnages_id])
+            ->first();
         if ($this->request->is(['patch', 'post', 'put'])) {
             $armure = $this->Armures->patchEntity($armure, $this->request->data);
             if ($this->Armures->save($armure)) {
                 //$this->Flash->success(__('The armure has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$personnage->id]);
             } else {
                 //$this->Flash->error(__('The armure could not be saved. Please, try again.'));
             }
         }
-        $personnages = $this->Armures->Personnages->find('list', ['limit' => 200]);
-        $this->set(compact('armure', 'personnages'));
+        $this->set('personnage',$personnage);
+        $this->set(compact('armure'));
         $this->set('_serialize', ['armure']);
     }
 
@@ -101,13 +113,14 @@ class ArmuresController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        //$this->request->allowMethod(['post', 'delete']);
         $armure = $this->Armures->get($id);
+        $id = $armure->personnages_id;
         if ($this->Armures->delete($armure)) {
             //$this->Flash->success(__('The armure has been deleted.'));
         } else {
             //$this->Flash->error(__('The armure could not be deleted. Please, try again.'));
         }
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$id]);
     }
 }

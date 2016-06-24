@@ -102,7 +102,20 @@
 	        </tr>
 	        <tr>
 	            <th class="CA"><?= __('Classe d\'armure') ?></th>
-	            <td><?= $this->Form->input('ca',['label'=>false,'class'=>"decale"]) ?></td>
+	            <td>
+	            	<?php
+	            		if(!isset($armures)){
+	            			echo $this->Form->input('ca',['label'=>false,'class'=>"decale"]); 
+	            		}
+	            		else{
+	            			$i = 0;
+	            			foreach($armures as $a){
+	            				$i=$i+$a->indice;
+	            			}
+	            			echo $this->Form->input('ca',['label'=>false,'class'=>"decale",'value'=>$i]);
+	            		}
+	            	?>
+	            </td>
 	        </tr>
 	        <tr>
 	            <th class="PD"><?= __('Point de destin') ?></th>
@@ -280,10 +293,155 @@
             ?>
 	    </div>
    	</div>
+   	<div class="medium-block THH">
+	    <table class="vertical-table">
+	        <tr>
+	            <th class="small-img small-img-area"><?= $this->Html->image('tete.png') ?></th>
+	            <td>
+		            <?php
+	                		$token = null;
+	                		if(!empty($armures)){
+	                			foreach($armures as $e ){
+	                				if($e->emplacement == "tete")
+	                				$token = $e;
+	                			}
+	                		}
+	                		if(isset($token)){
+	                			echo '<div class="item">'.$this->Html->link($token->nom, ['controller'=>'armures','action' => 'edit', $token->id]).'</div>';
+	                			echo '<div class="value">'.$token->indice.'</div>';
+	                			echo '<div class="action">';
+            				    echo $this->Html->link($this->Html->image('suppr.png', array('title' => "supprimer")), ['controller'=>'armures','action' => 'delete', $token->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $token->nom)]);
+								echo '</div>';
+	                		}
+	                		else{
+	                			echo '<div class="center armures-img">'.$this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'armures','action' => 'add',$personnage->id.'-tete'),
+		                        array('escape' => false) 
+                    			).'</div>';
+	                		}
+	                	?>
+	            </td>
+	        </tr>
+	        <tr>
+	            <th class="small-img small-img-area"><?= $this->Html->image('torse.png') ?></th>
+	            <td>
+		            <?php
+	                		$token = null;
+	                		if(!empty($armures)){
+	                			foreach($armures as $e ){
+	                				if($e->emplacement == "torse")
+	                				$token = $e;
+	                			}
+	                		}
+	                		if(isset($token)){
+	                			echo '<div class="item">'.$this->Html->link($token->nom, ['controller'=>'armures','action' => 'edit', $token->id]).'</div>';
+	                			echo '<div class="value">'.$token->indice.'</div>';
+	                			echo '<div class="action">';
+            				    echo $this->Html->link($this->Html->image('suppr.png', array('title' => "supprimer")), ['controller'=>'armures','action' => 'delete', $token->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $token->nom)]);
+								echo '</div>';
+	                		}
+	                		else{
+	                			echo '<div class="center armures-img">'.$this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'armures','action' => 'add',$personnage->id.'-torse'),
+		                        array('escape' => false) 
+                    			).'</div>';
+	                		}
+	                	?>
+	            </td>
+	        </tr>
+	        <tr>
+	            <th class="small-img small-img-area"><?= $this->Html->image('hands.ico') ?></th>
+	            <td>
+		            <?php
+	                		$token = null;
+	                		if(!empty($armures)){
+	                			foreach($armures as $e ){
+	                				if($e->emplacement == "mains")
+	                				$token = $e;
+	                			}
+	                		}
+	                		if(isset($token)){
+	                			echo '<div class="item">'.$this->Html->link($token->nom, ['controller'=>'armures','action' => 'edit', $token->id]).'</div>';
+	                			echo '<div class="value">'.$token->indice.'</div>';
+	                			echo '<div class="action">';
+            				    echo $this->Html->link($this->Html->image('suppr.png', array('title' => "supprimer")), ['controller'=>'armures','action' => 'delete', $token->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $token->nom)]);
+								echo '</div>';
+	                		}
+	                		else{
+	                			echo '<div class="center armures-img">'.$this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'armures','action' => 'add',$personnage->id.'-mains'),
+		                        array('escape' => false) 
+                    			).'</div>';
+	                		}
+	                	?>
+	            </td>
+	        </tr>
+	        <tr>
+	            <th class="small-img small-img-area"><?= $this->Html->image('jambe.png') ?></th>
+	            <td>
+		            <?php
+	                		$token = null;
+	                		if(!empty($armures)){
+	                			foreach($armures as $e ){
+	                				if($e->emplacement == "jambes")
+	                				$token = $e;
+	                			}
+	                		}
+	                		if(isset($token)){
+	                			echo '<div class="item">'.$this->Html->link($token->nom, ['controller'=>'armures','action' => 'edit', $token->id]).'</div>';
+	                			echo '<div class="value">'.$token->indice.'</div>';
+	                			echo '<div class="action">';
+            				    echo $this->Html->link($this->Html->image('suppr.png', array('title' => "supprimer")), ['controller'=>'armures','action' => 'delete', $token->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $token->nom)]);
+								echo '</div>';
+	                		}
+	                		else{
+	                			echo '<div class="center armures-img">'.$this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'armures','action' => 'add',$personnage->id.'-jambes'),
+		                        array('escape' => false) 
+                    			).'</div>';
+	                		}
+	                	?>
+	            </td>
+	        </tr>
+	        <tr>
+	            <th class="small-img small-img-area"><?= $this->Html->image('pied.png') ?></th>
+	            <td>
+		            <?php
+	                		$token = null;
+	                		if(!empty($armures)){
+	                			foreach($armures as $e ){
+	                				if($e->emplacement == "pieds")
+	                				$token = $e;
+	                			}
+	                		}
+	                		if(isset($token)){
+	                			echo '<div class="item">'.$this->Html->link($token->nom, ['controller'=>'armures','action' => 'edit', $token->id]).'</div>';
+	                			echo '<div class="value">'.$token->indice.'</div>';
+	                			echo '<div class="action">';
+            				    echo $this->Html->link($this->Html->image('suppr.png', array('title' => "supprimer")), ['controller'=>'armures','action' => 'delete', $token->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $token->nom)]);
+								echo '</div>';
+	                		}
+	                		else{
+	                			echo '<div class="center armures-img">'.$this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'armures','action' => 'add',$personnage->id.'-pieds'),
+		                        array('escape' => false) 
+                    			).'</div>';
+	                		}
+	                	?>
+	            </td>
+	        </tr>
+	        
+	    </table>
+    </div>
    	<?php 
    		if($personnage->archetype == "mage"){
    	?>
-   	<div class="medium-block THH">
+   	<div class="shorter-block THH">
 	    <table class="vertical-table">
 	        <tr>
 	            <th><?= __('Or') ?></th>
