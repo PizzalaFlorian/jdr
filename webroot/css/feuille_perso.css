@@ -16,11 +16,7 @@ fieldset,table{
     font-size: 12px;
 }
 
-.c{
-    width: 190px;
-    margin:0 auto !important;
-    text-align: center;
-}
+
 
 a, td, th{
     padding:0 !important;
@@ -44,8 +40,24 @@ th{
     text-align: center !important;
 }
 
+.identity{
+    width: 100%;
+}
+
+.identity input{
+    width: 90% !important;
+}
+.identity th{
+    width:20% !important;
+}
+.c{
+    width: 90%;
+    margin:0 auto !important;
+    text-align: center;
+}
+
 input {
-    width:190px !important;
+    /*width:190px !important;*/
     height: auto !important;
     margin: 0 auto !important;
     padding: 0 !important;
@@ -60,7 +72,7 @@ input {
 
 
 input[type="number"] {
-    padding-left:12px !important;
+    padding-left:13px !important;
 }
 .big-hole{
     width:180px !important;
@@ -82,10 +94,11 @@ input[type="number"] {
     /*margin-left:18%;*/
 }
 .decaleRight{
-    float: right;
+    float: left;
     /*margin-left:3px;*/
     /*transform: translateY(50%);*/
     font-size:10px !important;
+    font-weight: bold;
 }
 
 .medium-block{
@@ -99,9 +112,11 @@ input[type="number"] {
 .vertical-table th {
    font-size:12px !important; 
 }
-
+.title-area .name img{
+     height: 45px !important;
+}
 img{
-    height: 30px !important;
+    height: 30px;
 }
 img:hover{
     background: rgba(179,172,173,0.5);

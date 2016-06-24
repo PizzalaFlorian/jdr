@@ -22,7 +22,13 @@
             else{
                 echo $this->Form->input('dura');
             }
-            echo $this->Form->input('composante');
+            echo $this->Form->select('composante',
+            [
+                'Physique'=>'Physique',
+                'Adresse'=>'Adresse',
+                'Social'=>'Social',
+                'Esprit'=>'Esprit',
+            ]);
             
         ?>
     </fieldset>

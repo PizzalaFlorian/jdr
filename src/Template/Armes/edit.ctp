@@ -14,7 +14,15 @@
             if($personnage->type_campagne != "medieval"){
                 echo $this->Form->input('dura');
             }
-            echo $this->Form->input('composante');
+            echo $this->Form->select('composante',
+            [
+                'Physique'=>'Physique',
+                'Adresse'=>'Adresse',
+                'Social'=>'Social',
+                'Esprit'=>'Esprit',
+            ],
+            ['default'=>$arme->composante]
+            );
             
         ?>
     </fieldset>

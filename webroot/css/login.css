@@ -1,5 +1,5 @@
 #loginSite {
-    width: 30% !important;
+    width: 300px !important;
     margin: 0 auto !important;
     padding: 50px;
     text-align: center;
@@ -21,8 +21,9 @@ button{
 }
 
 input[type="text"],input[type="password"]{
+    width: 200px !important;
     text-align: center !important;
-   -moz-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
     -webkit-border-radius: 10px !important;
     border-radius: 10px !important; 
     background-color:transparent !important;

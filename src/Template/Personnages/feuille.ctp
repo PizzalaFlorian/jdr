@@ -29,7 +29,7 @@
     	</div>
     </div>
     <div class="THH">
-	    <table cellpadding="0" cellspacing="0">
+	    <table cellpadding="0" cellspacing="0" class="identity">
 	        <thead>
 	            <tr>
 	                <th><div class="c">Race</div></th>
@@ -280,6 +280,28 @@
             ?>
 	    </div>
    	</div>
+   	<?php 
+   		if($personnage->archetype == "mage"){
+   	?>
+   	<div class="medium-block THH">
+	    <table class="vertical-table">
+	        <tr>
+	            <th><?= __('Or') ?></th>
+	            <td><?= $this->Form->input('gold',['label'=>false]) ?></td>
+	        </tr>
+	        <tr>
+	            <th><?= __('Argent') ?></th>
+	            <td><?= $this->Form->input('argent',['label'=>false]) ?></td>
+	        </tr>
+	        <tr>
+	            <th><?= __('Bronze') ?></th>
+	            <td><?= $this->Form->input('bronze',['label'=>false]) ?></td>
+	        </tr>
+	    </table>
+   	</div>
+   	<?php
+   		}
+   	?>
    	</fieldset> 
 </div> 
 	<?= $this->Form->end() ?>
