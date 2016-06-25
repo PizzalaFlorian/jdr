@@ -45,6 +45,9 @@ $cakeDescription = 'Les Amis du JdR';
         <div class="top-bar-section">
             <ul class="center">
                 <li>
+                    <?= $this->Html->link(__('Accueil'), ['controller'=>'docs','action' => 'index']) ?>
+                </li>
+                <li>
                     <?= $this->Html->link(__('règles de jeu'), ['controller'=>'docs','action' => 'rules']) ?>
                 </li>
                 <li>

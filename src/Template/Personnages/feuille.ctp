@@ -50,181 +50,177 @@
 	        </tbody>
 	    </table>
 	</div>
-    <div class="medium-block THH">
-	    <table class="vertical-table">
-	        <tr>
-	            <th class="PV"><?= __('Vie') ?></th>
-	            <td>
-		            <div class="decale">
-		            	<?= $this->Form->input('pv',['label'=>false]) ?>
-		            </div>
-		            <div class="decaleRight">
-		             / <?= h($personnage->pv_max) ?>
-		            </div>
-	             </td>
-	        </tr>
-	        <tr>
-	           <th class="PM">
-	           <?php 
-	         		$string = 'toto';
-	            	if($personnage->archetype == 'commun'){
-	            		$string = "Points d'action";
-	            	}
-	            	if($personnage->archetype == 'mage'){
-	            		$string = "Points de magie";
-	            	}
-	            	if($personnage->archetype == 'creatif'){
-	            		$string = "Points d'ingéniositée";
-	            	}
-	            ?>
-	            <?= __($string) ?>
-	            </th>
-	            <td>
-	            <?php 
-	            	if($personnage->archetype == 'commun'){
-	            		echo $this->Form->input('pa',['label'=>false,'class'=>"decale"]);
-	            	}
-	            	if($personnage->archetype == 'mage'){
-	            		//echo $this->Form->input('pm',['label'=>false]);
-	            		echo '<div class="decale">';
-		            	echo $this->Form->input('pm',['label'=>false]) ;
-			            echo'</div>
+	<div class="bande-horizontale">
+	    <div class="medium-block THH">
+		    <table class="vertical-table">
+		        <tr>
+		            <th class="PV"><?= __('Vie') ?></th>
+		            <td>
+			            <div class="decale">
+			            	<?= $this->Form->input('pv',['label'=>false]) ?>
+			            </div>
 			            <div class="decaleRight">
-			             /  ';
-			            echo h($personnage->pm_max);
-			            echo '</div>';
-	            	}
-	            	if($personnage->archetype == 'creatif'){
-	            		echo $this->Form->input('pi',['label'=>false]);
-	            	}
-	            ?>
-	            </td>
-	        </tr>
-	        <tr>
-	            <th class="CA"><?= __('Classe d\'armure') ?></th>
-	            <td>
-	            	<?php
-	            		if(!isset($armures)){
-	            			echo $this->Form->input('ca',['label'=>false,'class'=>"decale"]); 
-	            		}
-	            		else{
-	            			$i = 0;
-	            			foreach($armures as $a){
-	            				$i=$i+$a->indice;
-	            			}
-	            			echo $this->Form->input('ca',['label'=>false,'class'=>"decale",'value'=>$i]);
-	            		}
-	            	?>
-	            </td>
-	        </tr>
-	        <tr>
-	            <th class="PD"><?= __('Point de destin') ?></th>
-	            <td><?= $this->Form->input('destin',['label'=>false,'class'=>"decale"]) ?></td>
-	        </tr>
-	    </table>
-    </div>
-    <?php 
-   		if($personnage->archetype == "mage"){
-   	?>
-   	<div class="medium-block MM">
-	    <table>
-	        <tbody>
-	        	<tr>
-	                <td class="M1"><div class="center btext">Ecole Majeure</div></td>
-	                <td class="M2"><div class="center btext">Ecole Mineure</div></td>
-	            </tr>
-	            <tr>
-	                <td class="big-hole">
-	                	<?php
-	                		$token = null;
-	                		if(!empty($ecoles)){
-	                			foreach($ecoles as $e ){
-	                				if($e->type == "majeure")
-	                				$token = $e;
-	                			}
-	                		}
-	                		if(isset($token)){
-	                			echo '<div class="fat">'.$this->Html->link($token->nom, ['controller'=>'maitrises','action' => 'edit', $token->id]).'</div>';
-	                		}
-	                		else{
-	                			echo $this->Html->link(
-		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
-		                        array('controller'=>'maitrises','action' => 'add',$personnage->id.'-majeure'),
-		                        array('escape' => false) 
-                    			);
-	                		}
-	                	?>
-	                </td>
-	                <td class="big-hole">
-	                		<?php
-	                		$token = null;
-	                		if(!empty($ecoles)){
-	                			foreach($ecoles as $e ){
-	                				if($e->type == "mineure")
-	                				$token = $e;
-	                			}
-	                		}
-	                		if(isset($token)){
-	                			echo '<div class="fat">'.$this->Html->link($token->nom, ['controller'=>'maitrises','action' => 'edit', $token->id]).'</div>';
-	                		}
-	                		else{
-	                			echo $this->Html->link(
-		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
-		                        array('controller'=>'maitrises','action' => 'add',$personnage->id.'-mineure'),
-		                        array('escape' => false) 
-                    			);
-	                		}
-	                	?>
-	                </td>
-	            </tr>
-	        </tbody>
-	    </table>
-   	</div>
-   	<?php
-   		}
-   	?>
-    <div class="medium-block THH">
-	    <table class="vertical-table">
-	        <tr >
-	            <th class="PH"><?= __('Physique') ?></th>
-	            <td><?= $this->Form->input('physique',['label'=>false,'class'=>"decale"]) ?></td>
-	        </tr>
-	        <tr>
-	            <th class="AD"><?= __('Adresse') ?></th>
-	            <td><?= $this->Form->input('adresse',['label'=>false,'class'=>"decale"]) ?></td>
-	        </tr>
-	        <tr>
-	            <th class="SO"><?= __('Social') ?></th>
-	            <td><?= $this->Form->input('social',['label'=>false,'class'=>"decale"]) ?></td>
-	        </tr>
-	        <tr>
-	            <th class="ES"><?= __('Esprit') ?></th>
-	            <td><?= $this->Form->input('esprit',['label'=>false,'class'=>"decale"]) ?></td>
-	        </tr>
-	    </table>
-   	</div>
-   	<?php 
-   		if($personnage->archetype == "commun" || $personnage->archetype == "creatif"){
-   	?>
-   	<div class="medium-block THH">
-	    <table class="vertical-table">
-	        <tr>
-	            <th><?= __('Or') ?></th>
-	            <td><?= $this->Form->input('gold',['label'=>false]) ?></td>
-	        </tr>
-	        <tr>
-	            <th><?= __('Argent') ?></th>
-	            <td><?= $this->Form->input('argent',['label'=>false]) ?></td>
-	        </tr>
-	        <tr>
-	            <th><?= __('Bronze') ?></th>
-	            <td><?= $this->Form->input('bronze',['label'=>false]) ?></td>
-	        </tr>
-	    </table>
-   	</div>
-   	<?php
-   		}
-   	?>
+			             / <?= h($personnage->pv_max) ?>
+			            </div>
+		             </td>
+		        </tr>
+		        <tr>
+		           <th class="PM">
+		           <?php 
+		         		$string = 'toto';
+		            	if($personnage->archetype == 'commun'){
+		            		$string = "Points d'action";
+		            	}
+		            	if($personnage->archetype == 'mage'){
+		            		$string = "Points de magie";
+		            	}
+		            	if($personnage->archetype == 'creatif'){
+		            		$string = "Points d'ingéniositée";
+		            	}
+		            ?>
+		            <?= __($string) ?>
+		            </th>
+		            <td>
+		            <?php 
+		            	if($personnage->archetype == 'commun'){
+		            		echo $this->Form->input('pa',['label'=>false,'class'=>"decale"]);
+		            	}
+		            	if($personnage->archetype == 'mage'){
+		            		//echo $this->Form->input('pm',['label'=>false]);
+		            		echo '<div class="decale">';
+			            	echo $this->Form->input('pm',['label'=>false]) ;
+				            echo'</div>
+				            <div class="decaleRight">
+				             /  ';
+				            echo h($personnage->pm_max);
+				            echo '</div>';
+		            	}
+		            	if($personnage->archetype == 'creatif'){
+		            		echo $this->Form->input('pi',['label'=>false]);
+		            	}
+		            ?>
+		            </td>
+		        </tr>
+		        <tr>
+		            <th class="CA"><?= __('Classe d\'armure') ?></th>
+		            <td>
+		            	<?php
+		            		if(!isset($armures)){
+		            			echo $this->Form->input('ca',['label'=>false,'class'=>"decale"]); 
+		            		}
+		            		else{
+		            			$i = 0;
+		            			foreach($armures as $a){
+		            				$i=$i+$a->indice;
+		            			}
+		            			echo $this->Form->input('ca',['label'=>false,'class'=>"decale",'value'=>$i]);
+		            		}
+		            	?>
+		            </td>
+		        </tr>
+		        <tr>
+		            <th class="PD"><?= __('Point de destin') ?></th>
+		            <td><?= $this->Form->input('destin',['label'=>false,'class'=>"decale"]) ?></td>
+		        </tr>
+		    </table>
+	    </div>
+	    <div class="medium-block THH">
+		    <table class="vertical-table">
+		        <tr >
+		            <th class="PH"><?= __('Physique') ?></th>
+		            <td><?= $this->Form->input('physique',['label'=>false,'class'=>"decale"]) ?></td>
+		        </tr>
+		        <tr>
+		            <th class="AD"><?= __('Adresse') ?></th>
+		            <td><?= $this->Form->input('adresse',['label'=>false,'class'=>"decale"]) ?></td>
+		        </tr>
+		        <tr>
+		            <th class="SO"><?= __('Social') ?></th>
+		            <td><?= $this->Form->input('social',['label'=>false,'class'=>"decale"]) ?></td>
+		        </tr>
+		        <tr>
+		            <th class="ES"><?= __('Esprit') ?></th>
+		            <td><?= $this->Form->input('esprit',['label'=>false,'class'=>"decale"]) ?></td>
+		        </tr>
+		    </table>
+	   	</div>
+	   	<?php 
+	   		if($personnage->archetype == "mage"){
+	   	?>
+	   	<div class="medium-block MM">
+		    <table>
+		        <tbody>
+		        	<tr>
+		                <td class="M1"><div class="center btext">Ecole Majeure</div></td>
+		                <td class="M2"><div class="center btext">Ecole Mineure</div></td>
+		            </tr>
+		            <tr>
+		                <td class="big-hole">
+		                	<?php
+		                		$token = null;
+		                		if(!empty($ecoles)){
+		                			foreach($ecoles as $e ){
+		                				if($e->type == "majeure")
+		                				$token = $e;
+		                			}
+		                		}
+		                		if(isset($token)){
+		                			echo '<div class="fat">'.$this->Html->link($token->nom, ['controller'=>'maitrises','action' => 'edit', $token->id]).'</div>';
+		                		}
+		                		else{
+		                			echo $this->Html->link(
+			                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+			                        array('controller'=>'maitrises','action' => 'add',$personnage->id.'-majeure'),
+			                        array('escape' => false) 
+	                    			);
+		                		}
+		                	?>
+		                </td>
+		                <td class="big-hole">
+		                		<?php
+		                		$token = null;
+		                		if(!empty($ecoles)){
+		                			foreach($ecoles as $e ){
+		                				if($e->type == "mineure")
+		                				$token = $e;
+		                			}
+		                		}
+		                		if(isset($token)){
+		                			echo '<div class="fat">'.$this->Html->link($token->nom, ['controller'=>'maitrises','action' => 'edit', $token->id]).'</div>';
+		                		}
+		                		else{
+		                			echo $this->Html->link(
+			                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+			                        array('controller'=>'maitrises','action' => 'add',$personnage->id.'-mineure'),
+			                        array('escape' => false) 
+	                    			);
+		                		}
+		                	?>
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+	   	</div>
+	   	<?php
+	   		}
+	   	?>
+	   	<div class="medium-block THH bord-right">
+		    <table class="vertical-table">
+		        <tr>
+		            <th><?= __('Or') ?></th>
+		            <td><?= $this->Form->input('gold',['label'=>false]) ?></td>
+		        </tr>
+		        <tr>
+		            <th><?= __('Argent') ?></th>
+		            <td><?= $this->Form->input('argent',['label'=>false]) ?></td>
+		        </tr>
+		        <tr>
+		            <th><?= __('Bronze') ?></th>
+		            <td><?= $this->Form->input('bronze',['label'=>false]) ?></td>
+		        </tr>
+		    </table>
+	   	</div>
+	</div>   	
    	<div class="adaptative-block back_armes">
    		<!--<div class="title-categorie center">Armes</div>-->
 	   	<table class="armes">
@@ -249,7 +245,7 @@
 	                	}
 	                ?>
 	               	<th class="armes-long"><?= $this->Paginator->sort('composante') ?></th>
-	                <th class="armes-court"></th>
+	                <th class="armes-long"></th>
 	            </tr>
 	        </thead>
 	        <tbody>
@@ -275,7 +271,7 @@
 	                ?>
 	                <td class="armes-long"><?= h($arme->composante) ?></td>
 	                
-	                <td class="armes-court">
+	                <td class="armes-long">
 	                    <?= $this->Html->link($this->Html->image('modif.png', array('title' => "modifier")), ['controller'=>'armes','action' => 'edit', $arme->id],array('escape'=>false)) ?>
 	                    <?= $this->Html->link($this->Html->image('suppr.png', array('title' => "modifier")), ['controller'=>'armes','action' => 'delete', $arme->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $arme->id)]) ?>
 	                </td>
@@ -293,7 +289,7 @@
             ?>
 	    </div>
    	</div>
-   	<div class="medium-block THH">
+   	<div class="armour-block THH">
 	    <table class="vertical-table">
 	        <tr>
 	            <th class="small-img small-img-area"><?= $this->Html->image('tete.png') ?></th>
@@ -352,7 +348,7 @@
 	            </td>
 	        </tr>
 	        <tr>
-	            <th class="small-img small-img-area"><?= $this->Html->image('hands.ico') ?></th>
+	            <th class="small-img small-img-area"><?= $this->Html->image('hands.png') ?></th>
 	            <td>
 		            <?php
 	                		$token = null;
@@ -438,28 +434,7 @@
 	        
 	    </table>
     </div>
-   	<?php 
-   		if($personnage->archetype == "mage"){
-   	?>
-   	<div class="shorter-block THH">
-	    <table class="vertical-table">
-	        <tr>
-	            <th><?= __('Or') ?></th>
-	            <td><?= $this->Form->input('gold',['label'=>false]) ?></td>
-	        </tr>
-	        <tr>
-	            <th><?= __('Argent') ?></th>
-	            <td><?= $this->Form->input('argent',['label'=>false]) ?></td>
-	        </tr>
-	        <tr>
-	            <th><?= __('Bronze') ?></th>
-	            <td><?= $this->Form->input('bronze',['label'=>false]) ?></td>
-	        </tr>
-	    </table>
-   	</div>
-   	<?php
-   		}
-   	?>
+   	
    	</fieldset> 
 </div> 
 	<?= $this->Form->end() ?>

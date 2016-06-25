@@ -61,6 +61,11 @@ class AppController extends Controller
         // Autorise l'action display pour que notre controller de pages
         // continue de fonctionner.
         $this->Auth->allow(['display']);
+        $this->Auth->allow(['rules']);
+        $this->Auth->allow(['accueil']);
+        $this->Auth->allow(['lore']);
+        $this->Auth->allow(['races']);
+        $this->Auth->allow(['professions']);
     }
 
     /**
