@@ -2,10 +2,11 @@ $(function(){
     $(':input').keyup(function() {
         var id = $('#p_id').html();
         var selectorID = $(this).attr('id');
-        //console.log("select "+selectorID);
+        var selectorClass = $(this).attr('class');
+        console.log("select "+selectorID);
         var content = $(this).val();
-        //console.log("contnue "+content);
-        if(content!=""){
+        console.log("contnue "+content);
+        if(content!="" && selectorClass != "regular munition"){
             $.ajax({  
                     url : '../edit/'+id,
                     type : 'POST',
@@ -13,7 +14,18 @@ $(function(){
                           '&'+selectorID+'=' + content,
                     dataType : 'html', 
                     success : function(code_html, statut){ 
-                        console.log("succes")
+                        console.log("succes perso")
+                }
+            });
+        }
+        if(content!="" && selectorClass == "regular munition"){
+            $.ajax({  
+                    url : '../../armes/edit/'+selectorID,
+                    type : 'POST',
+                    data : 'munition=' + content,
+                    dataType : 'html', 
+                    success : function(code_html, statut){ 
+                        console.log("succes munition")
                 }
             });
         }
@@ -22,10 +34,11 @@ $(function(){
     $(':input').click(function() {
         var id = $('#p_id').html();
         var selectorID = $(this).attr('id');
+        var selectorClass = $(this).attr('class');
         //console.log("select "+selectorID);
         var content = $(this).val();
         //console.log("contnue "+content);
-        if(content!=""){
+        if(content!="" && selectorClass != "regular munition"){
             $.ajax({  
                     url : '../edit/'+id,
                     type : 'POST',
@@ -37,6 +50,5 @@ $(function(){
                 }
             });
         }
- 
     });
 });

@@ -261,7 +261,7 @@
 	                <?php
 	                	}
 	                ?>
-	                <td class="armes-long"><?= h($arme->munition) ?></td>
+	                <td class="armes-long"><input id=<?= h($arme->id) ?> class="regular munition" name="munition" type="text" value=<?= h($arme->munition) ?>></input></td>
 	                <?php 
 	                	if($personnage->typeCampagne == "science-fiction"){
 	                ?>
