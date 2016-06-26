@@ -29,6 +29,28 @@ $(function(){
                 }
             });
         }
+        if(content!="" && selectorClass == "regular munition" && selectorClass != "quantite"){
+            $.ajax({  
+                    url : '../../armes/edit/'+selectorID,
+                    type : 'POST',
+                    data : 'munition=' + content,
+                    dataType : 'html', 
+                    success : function(code_html, statut){ 
+                        console.log("succes munition")
+                }
+            });
+        }
+         if(content!="" && selectorClass != "regular munition" && selectorClass == "quantite"){
+            $.ajax({  
+                    url : '../../objects/edit/'+selectorID,
+                    type : 'POST',
+                    data : 'quantite=' + content,
+                    dataType : 'html', 
+                    success : function(code_html, statut){ 
+                        console.log("succes inventaire")
+                }
+            });
+        }
  
     });
     $(':input').click(function() {
@@ -47,6 +69,17 @@ $(function(){
                     dataType : 'html', 
                     success : function(code_html, statut){ 
                         console.log("succes")
+                }
+            });
+        }
+        if(content!="" && selectorClass != "regular munition" && selectorClass == "quantite"){
+            $.ajax({  
+                    url : '../../objects/edit/'+selectorID,
+                    type : 'POST',
+                    data : 'quantite=' + content,
+                    dataType : 'html', 
+                    success : function(code_html, statut){ 
+                        console.log("succes inventaire")
                 }
             });
         }

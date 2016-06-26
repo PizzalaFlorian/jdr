@@ -453,7 +453,7 @@
 	            <?php foreach ($objects as $object): ?>
 	            <tr>
 	                <td class="e-name"><?= h($object->nom) ?></td>
-	                <td class="e-qtt"><input id=<?= $object->id ?> class="quantite" name="quantite" value=<?= $this->Number->format($object->quantite) ?>></input></td>
+	                <td class="e-qtt"><input id=<?= $object->id ?> type="number" class="quantite" name="quantite" value=<?= $this->Number->format($object->quantite) ?>></input></td>
 	                <td class="e-dsc"><?= h($object->description) ?></td>
 	                <td class="e-action">
 	                    <?= $this->Html->link($this->Html->image('modif.png', array('title' => "modifier")), ['controller'=>'objects','action' => 'edit', $object->id],array('escape'=>false)) ?>

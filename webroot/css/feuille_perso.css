@@ -340,7 +340,7 @@ img:hover{
 
 .quantite{
     font-weight: normal;
-    width:90%;
+    width:90% !important;
     margin: 0 auto !important;
 }
 
