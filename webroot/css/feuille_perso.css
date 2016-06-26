@@ -325,10 +325,12 @@ img:hover{
 }
 
 .equipement{
-   width: 30% !important;
-   float:left;
-   position: relative;
-   table-layout:fixed;
+    margin-top: 5px;
+    width: 30% !important;
+    background: rgba(99,99,99,0.2) !important;
+    float:left;
+    position: relative;
+    table-layout:fixed;
 }
 
 
@@ -349,14 +351,24 @@ img:hover{
 }
 
 .e-name, .e-dsc{
-    width : 40% !important;
+    width : 30% !important;
+    text-align: center;
 }
-.e-qtt{
-    width:10% !important;
+.e-qtt, .smaller{
+    width:20% !important;
 }
 .e-action{
-    width: 10% !important;
+    width: 20% !important;
+    text-align: right;
 }
 .plus img{
     height: 30px !important;
+}
+
+.inv{
+    font-size: 1em !important;
+    font-weight: bold;
+    color: #80622B !important;
+    padding-bottom: 0 !important;
+    border-bottom: 2px solid #80622B !important;
 }

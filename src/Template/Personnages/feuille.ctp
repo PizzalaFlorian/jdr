@@ -443,12 +443,13 @@
 	    </table>
     </div>
    	<div class="equipement THH">
+   		<h4 class="center inv">Inventaire</h4>
    		<table>
-	        <thead>
-	            <tr>
-	                <th colspan="4" class="center">Inventaire</th>
-	            </tr>
-	        </thead>
+	        <!--<thead>-->
+	        <!--    <tr>-->
+	        <!--        <th colspan="4" class="center">Inventaire</th>-->
+	        <!--    </tr>-->
+	        <!--</thead>-->
 	        <tbody>
 	            <?php foreach ($objects as $object): ?>
 	            <tr>
@@ -458,7 +459,7 @@
 	                <td class="e-action">
 	                    <?= $this->Html->link($this->Html->image('modif.png', array('title' => "modifier")), ['controller'=>'objects','action' => 'edit', $object->id],array('escape'=>false)) ?>
 	                    <?= $this->Html->link($this->Html->image('suppr.png', array('title' => "modifier")), ['controller'=>'objects','action' => 'delete', $object->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $object->nom)]) ?>
-	                 </td>
+	                </td>
 	            </tr>
 	            <?php endforeach; ?>
 	        </tbody>
