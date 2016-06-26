@@ -58,7 +58,6 @@ th{
 }
 
 input {
-    /*width:190px !important;*/
     height: auto !important;
     margin: 0 auto !important;
     padding: 0 !important;
@@ -199,6 +198,7 @@ img:hover{
     margin-right:2%;
     font-size:0.75em;
 }
+
 .adaptative-block{
     top:0px !important;
     /*width:420px !important;*/
@@ -322,4 +322,41 @@ img:hover{
 
 .regular{
     font-weight: normal !important;
+}
+
+.equipement{
+   width: 30% !important;
+   float:left;
+   position: relative;
+   table-layout:fixed;
+}
+
+
+.equipement table{
+    width:100%;
+    position: relative;
+    table-layout:fixed;
+}
+
+.quantite{
+    font-weight: normal;
+    width:90%;
+    margin: 0 auto !important;
+}
+
+.e-action img{
+    max-height: 18px;
+}
+
+.e-name, .e-dsc{
+    width : 40% !important;
+}
+.e-qtt{
+    width:10% !important;
+}
+.e-action{
+    width: 10% !important;
+}
+.plus img{
+    height: 30px !important;
 }

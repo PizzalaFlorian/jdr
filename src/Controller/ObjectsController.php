@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Objects Controller
@@ -49,20 +50,24 @@ class ObjectsController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($args=null)
     {
         $object = $this->Objects->newEntity();
+        $personnage = TableRegistry::get('personnages')
+            ->find()
+            ->where(['id'=>$args])
+            ->first();
         if ($this->request->is('post')) {
             $object = $this->Objects->patchEntity($object, $this->request->data);
             if ($this->Objects->save($object)) {
-                $this->Flash->success(__('The object has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                //$this->Flash->success(__('The object has been saved.'));
+                return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$personnage->id]);
             } else {
-                $this->Flash->error(__('The object could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The object could not be saved. Please, try again.'));
             }
         }
-        $personnages = $this->Objects->Personnages->find('list', ['limit' => 200]);
-        $this->set(compact('object', 'personnages'));
+        $this->set('personnage',$personnage);
+        $this->set(compact('object'));
         $this->set('_serialize', ['object']);
     }
 
@@ -78,17 +83,21 @@ class ObjectsController extends AppController
         $object = $this->Objects->get($id, [
             'contain' => []
         ]);
+        $personnage = TableRegistry::get('personnages')
+            ->find()
+            ->where(['id'=>$object->personnages_id])
+            ->first();
         if ($this->request->is(['patch', 'post', 'put'])) {
             $object = $this->Objects->patchEntity($object, $this->request->data);
             if ($this->Objects->save($object)) {
-                $this->Flash->success(__('The object has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                //$this->Flash->success(__('The object has been saved.'));
+                return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$personnage->id]);
             } else {
-                $this->Flash->error(__('The object could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The object could not be saved. Please, try again.'));
             }
         }
-        $personnages = $this->Objects->Personnages->find('list', ['limit' => 200]);
-        $this->set(compact('object', 'personnages'));
+        $this->set('personnage',$personnage);
+        $this->set(compact('object'));
         $this->set('_serialize', ['object']);
     }
 
@@ -104,9 +113,9 @@ class ObjectsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $object = $this->Objects->get($id);
         if ($this->Objects->delete($object)) {
-            $this->Flash->success(__('The object has been deleted.'));
+            //$this->Flash->success(__('The object has been deleted.'));
         } else {
-            $this->Flash->error(__('The object could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The object could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }

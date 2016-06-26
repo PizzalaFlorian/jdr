@@ -253,7 +253,6 @@
 	            <tr>
 	            	<td class"armes-long"><?= h($arme->nom) ?></td>
 	            	<td class="armes-court"><?= h($arme->porte) ?></td>
-	            	<td class="armes-long"><?= h($arme->degat) ?></td>
 	            	<?php 
 	                	if($personnage->typeCampagne == "science-fiction"){
 	                ?>
@@ -261,8 +260,17 @@
 	                <?php
 	                	}
 	                ?>
-	                <td class="armes-long"><input id=<?= h($arme->id) ?> class="regular munition" name="munition" type="text" value=<?= h($arme->munition) ?>></input></td>
-	                <?php 
+	                <?php
+	            		if($arme->porte == 'CàC'){
+	            	?>
+	            		<td class="armes-long" colspan="2"><?= h($arme->degat) ?></td>
+	            	<?php
+	            		}else{
+	            	?>
+		            	<td class="armes-long a-left"><?= h($arme->degat) ?></td>
+		                <td class="armes-long"><input id=<?= h($arme->id) ?> class="regular munition" name="munition" type="text" value=<?= h($arme->munition) ?>></input></td>
+	                <?php
+	            		}
 	                	if($personnage->typeCampagne == "science-fiction"){
 	                ?>
 	                <td class="armes-court"><?= $this->Number->format($arme->dura) ?></td>
@@ -434,7 +442,37 @@
 	        
 	    </table>
     </div>
-   	
+   	<div class="equipement THH">
+   		<table>
+	        <thead>
+	            <tr>
+	                <th colspan="4" class="center">Inventaire</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <?php foreach ($objects as $object): ?>
+	            <tr>
+	                <td class="e-name"><?= h($object->nom) ?></td>
+	                <td class="e-qtt"><input id=<?= $object->id ?> class="quantite" name="quantite" value=<?= $this->Number->format($object->quantite) ?>></input></td>
+	                <td class="e-dsc"><?= h($object->description) ?></td>
+	                <td class="e-action">
+	                    <?= $this->Html->link($this->Html->image('modif.png', array('title' => "modifier")), ['controller'=>'objects','action' => 'edit', $object->id],array('escape'=>false)) ?>
+	                    <?= $this->Html->link($this->Html->image('suppr.png', array('title' => "modifier")), ['controller'=>'objects','action' => 'delete', $object->id], ['escape'=>false,'confirm' => __('Are you sure you want to delete # {0}?', $object->nom)]) ?>
+	                 </td>
+	            </tr>
+	            <?php endforeach; ?>
+	        </tbody>
+    	</table>
+    	<div class="center plus">
+	    	<?php
+	    		echo $this->Html->link(
+		                        $this->Html->image('plus.png', array('title' => "Ajouter")), 
+		                        array('controller'=>'objects','action' => 'add',$personnage->id),
+		                        array('escape' => false) 
+                    			);
+            ?>
+	    </div>
+   	</div>
    	</fieldset> 
 </div> 
 	<?= $this->Form->end() ?>

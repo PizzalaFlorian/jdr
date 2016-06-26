@@ -6,7 +6,7 @@ $(function(){
         console.log("select "+selectorID);
         var content = $(this).val();
         console.log("contnue "+content);
-        if(content!="" && selectorClass != "regular munition"){
+        if(content!="" && selectorClass != "regular munition" && selectorClass != "quantite"){
             $.ajax({  
                     url : '../edit/'+id,
                     type : 'POST',
@@ -18,7 +18,7 @@ $(function(){
                 }
             });
         }
-        if(content!="" && selectorClass == "regular munition"){
+        if(content!="" && selectorClass == "regular munition" && selectorClass != "quantite"){
             $.ajax({  
                     url : '../../armes/edit/'+selectorID,
                     type : 'POST',
@@ -38,7 +38,7 @@ $(function(){
         //console.log("select "+selectorID);
         var content = $(this).val();
         //console.log("contnue "+content);
-        if(content!="" && selectorClass != "regular munition"){
+        if(content!="" && selectorClass != "regular munition" && selectorClass != "quantite"){
             $.ajax({  
                     url : '../edit/'+id,
                     type : 'POST',

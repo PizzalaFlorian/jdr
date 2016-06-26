@@ -1,5 +1,5 @@
 
-<div class="armures form large-9 medium-8 columns content">
+<div class="armures form large-10 medium-10 columns content">
     <?= $this->Form->create($armure) ?>
     <fieldset>
         <legend><?= __('Modifier la pièce d\'Armure') ?></legend>

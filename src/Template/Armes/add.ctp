@@ -7,7 +7,18 @@
            
             echo $this->Form->hidden('personnages_id', ['type'=>'number','value'=>$personnage->id]);
             echo $this->Form->input('nom');
-            echo $this->Form->input('porte');
+            echo $this->Form->select('porte',
+            [
+                'CàC'=>'CàC',
+                '5m'=>'5m',
+                '10m'=>'10m',
+                '25m'=>'25m',
+                '50m'=>'50m',
+                '100m'=>'100m',
+                '250m'=>'250m',
+                '500m'=>'500m',
+                '1km'=>'1km'
+            ]);
             echo $this->Form->input('degat');
             if($personnage->type_campagne == "medieval"){
                 echo $this->Form->hidden('cdt',['value'=>1]);
