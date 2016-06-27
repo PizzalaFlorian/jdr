@@ -61,6 +61,15 @@ $cakeDescription = 'Les Amis du JdR';
                 <li>
                     <?= $this->Html->link(__('feuilles personnages'), ['controller'=>'personnages','action' => 'index']) ?>
                 </li>
+                <?php
+                    if(isset($_SESSION['Auth']['User'])){
+                ?>
+                <li>
+                    <?= $this->Html->link(__('Inviter un utilisateur'), ['controller'=>'users','action' => 'add']) ?>
+                </li>
+                <?php
+                    }
+                ?>
             </ul>
             <ul class="right">
                 <li><?= $this->Html->link(__('Deconnexion'), [

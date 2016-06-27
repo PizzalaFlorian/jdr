@@ -55,10 +55,10 @@ class SpecialitesController extends AppController
         if ($this->request->is('post')) {
             $specialite = $this->Specialites->patchEntity($specialite, $this->request->data);
             if ($this->Specialites->save($specialite)) {
-                $this->Flash->success(__('The specialite has been saved.'));
+                //$this->Flash->success(__('The specialite has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The specialite could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The specialite could not be saved. Please, try again.'));
             }
         }
         $speciales = $this->Specialites->Speciales->find('list', ['limit' => 200]);
@@ -82,10 +82,10 @@ class SpecialitesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $specialite = $this->Specialites->patchEntity($specialite, $this->request->data);
             if ($this->Specialites->save($specialite)) {
-                $this->Flash->success(__('The specialite has been saved.'));
+                //$this->Flash->success(__('The specialite has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The specialite could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The specialite could not be saved. Please, try again.'));
             }
         }
         $speciales = $this->Specialites->Speciales->find('list', ['limit' => 200]);
@@ -106,9 +106,9 @@ class SpecialitesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $specialite = $this->Specialites->get($id);
         if ($this->Specialites->delete($specialite)) {
-            $this->Flash->success(__('The specialite has been deleted.'));
+            //$this->Flash->success(__('The specialite has been deleted.'));
         } else {
-            $this->Flash->error(__('The specialite could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The specialite could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }

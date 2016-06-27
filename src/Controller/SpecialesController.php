@@ -52,10 +52,10 @@ class SpecialesController extends AppController
         if ($this->request->is('post')) {
             $speciale = $this->Speciales->patchEntity($speciale, $this->request->data);
             if ($this->Speciales->save($speciale)) {
-                $this->Flash->success(__('The speciale has been saved.'));
+                //$this->Flash->success(__('The speciale has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The speciale could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The speciale could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('speciale'));
@@ -77,10 +77,10 @@ class SpecialesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $speciale = $this->Speciales->patchEntity($speciale, $this->request->data);
             if ($this->Speciales->save($speciale)) {
-                $this->Flash->success(__('The speciale has been saved.'));
+                //$this->Flash->success(__('The speciale has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The speciale could not be saved. Please, try again.'));
+                //$this->Flash->error(__('The speciale could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('speciale'));
@@ -99,9 +99,9 @@ class SpecialesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $speciale = $this->Speciales->get($id);
         if ($this->Speciales->delete($speciale)) {
-            $this->Flash->success(__('The speciale has been deleted.'));
+            //$this->Flash->success(__('The speciale has been deleted.'));
         } else {
-            $this->Flash->error(__('The speciale could not be deleted. Please, try again.'));
+            //$this->Flash->error(__('The speciale could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
     }

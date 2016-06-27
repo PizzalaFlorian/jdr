@@ -110,13 +110,14 @@ class ObjectsController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        //$this->request->allowMethod(['post', 'delete']);
         $object = $this->Objects->get($id);
+        $id = $object->personnages_id;
         if ($this->Objects->delete($object)) {
             //$this->Flash->success(__('The object has been deleted.'));
         } else {
             //$this->Flash->error(__('The object could not be deleted. Please, try again.'));
         }
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller' => 'Personnages', 'action' => 'feuille',$id]);
     }
 }
